@@ -288,8 +288,17 @@
     background:var(--cream); border-top:2px solid var(--gold);
     padding:34px 30px;
   }
+  .testi-stars{display:flex; gap:3px; margin-bottom:14px;}
   .testi-quote{font-family:'Playfair Display',serif; font-style:italic; font-size:2rem; color:var(--gold); line-height:1; margin-bottom:12px;}
-  .testi-card p.body{color:var(--ink); font-size:0.95rem; line-height:1.6; margin:0 0 20px 0;}
+  .testi-card p.body{color:var(--ink); font-size:0.95rem; line-height:1.6; margin:0 0 22px 0;}
+  .testi-person{display:flex; align-items:center; gap:12px;}
+  .testi-avatar{
+    width:42px; height:42px; border-radius:50%;
+    background:var(--navy-deep); color:var(--gold-bright);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif; font-weight:600; font-size:1.05rem;
+    flex-shrink:0;
+  }
   .testi-name{font-weight:700; font-size:0.88rem; color:var(--navy-deep);}
   .testi-role{color:var(--ink-soft); font-size:0.8rem;}
   @media(max-width:900px){ .testi-wrap{grid-template-columns:1fr;} }
@@ -488,27 +497,51 @@
     <div class="testi-wrap">
       <div class="testi-card">
         <div class="testi-quote">"</div>
+        <div class="testi-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg></div>
         <p class="body">Cuando llegué a España me puse en contacto con varias empresas gestoras y en ninguna sentí la calidez humana de sus gerentes. La dra. Montserrat Serrano tiene una gran empatía con los clientes, está pendiente de informar sobre el estado de los trámites. Hace su trabajo con eficiencia y no escatima esfuerzos en hacer todas las gestiones necesarias para que los trámites lleguen a buen fin. Recomiendo ampliamente sus servicios y los volvería a usar si fuere necesario.</p>
-        <div class="testi-name">María Teresa</div>
-        <div class="testi-role">Support</div>
+        <div class="testi-person">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">María Teresa</div>
+            <div class="testi-role">Support</div>
+          </div>
+        </div>
       </div>
       <div class="testi-card">
         <div class="testi-quote">"</div>
+        <div class="testi-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg></div>
         <p class="body">La verdad no esperaba que fuera tan sencillo, yo solo tuve que esperar a que mi trámite de residencia estuviera finalizado, ellos se ocuparon de todo. Y como han mostrado ser eficaces, les pedí que se encargaran de mis gestiones de jubilación ante la Seguridad Social, a través del convenio multilateral España-Uruguay.</p>
-        <div class="testi-name">Jorge</div>
-        <div class="testi-role">Support</div>
+        <div class="testi-person">
+          <div class="testi-avatar">J</div>
+          <div>
+            <div class="testi-name">Jorge</div>
+            <div class="testi-role">Support</div>
+          </div>
+        </div>
       </div>
       <div class="testi-card">
         <div class="testi-quote">"</div>
+        <div class="testi-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg></div>
         <p class="body">Me asesoraron sobre mi residencia y la de mi familia, realizaron mi trámite sin problemas. Acaban de notificarme que mi solicitud de nacionalidad ha sido resuelta. Muy satisfecho.</p>
-        <div class="testi-name">Alejandro</div>
-        <div class="testi-role">Cliente</div>
+        <div class="testi-person">
+          <div class="testi-avatar">A</div>
+          <div>
+            <div class="testi-name">Alejandro</div>
+            <div class="testi-role">Cliente</div>
+          </div>
+        </div>
       </div>
       <div class="testi-card">
         <div class="testi-quote">"</div>
+        <div class="testi-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#B8934A"><path d="M12 2l2.9 6.3L22 9l-5 5 1.4 7L12 17.8 5.6 21 7 14 2 9l7.1-.7L12 2z"/></svg></div>
         <p class="body">Tenía mis dudas sobre la solución que me aconsejaron, pero como me recomendaron sus servicios, decidí confiar. Después de haberme gestionado con éxito todos mis trámites con la Comunidad de Madrid, ahora están ocupándose de mi jubilación por invalidez ante la Seguridad Social, por el convenio bilateral España-Venezuela.</p>
-        <div class="testi-name">Marisol</div>
-        <div class="testi-role">Cliente</div>
+        <div class="testi-person">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Marisol</div>
+            <div class="testi-role">Cliente</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
