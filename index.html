@@ -88,7 +88,7 @@
       max-height:0; overflow:hidden;
       transition:max-height .3s ease;
     }
-    .nav-links.open{max-height:320px;}
+    .nav-links.open{max-height:420px;}
     .nav-links a{padding:16px 28px; border-bottom:1px solid var(--navy-line);}
   }
   @media(max-width:480px){
@@ -384,7 +384,8 @@
         <a href="sobre-mi.html">Sobre Mí</a>
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#opiniones">Opiniones</a>
-        <a href="#recursos">Recursos</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="contacto.html">Contacto</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -571,21 +572,30 @@
       <p>Artículos pensados para responder justo lo que buscas, escrito por quien lo tramita cada día.</p>
     </div>
     <div class="blog-grid">
-      <div class="blog-card">
-        <span class="blog-tag">Extranjería</span>
-        <h3>¿Cuánto tarda un NIE en Madrid en 2026?</h3>
-        <p>Plazos reales, documentación necesaria y qué hacer si tu cita se retrasa.</p>
-      </div>
-      <div class="blog-card">
-        <span class="blog-tag">Homologaciones</span>
-        <h3>Homologar tu título universitario: guía paso a paso</h3>
-        <p>Qué exige cada país de origen y cómo evitar los errores más comunes.</p>
-      </div>
-      <div class="blog-card">
-        <span class="blog-tag">Empresas</span>
-        <h3>Darte de alta como autónomo: lo que nadie te explica</h3>
-        <p>Obligaciones fiscales, plazos y decisiones que conviene tomar bien desde el primer día.</p>
-      </div>
+      <a href="articulo-nie.html" style="text-decoration:none;">
+        <div class="blog-card">
+          <span class="blog-tag">Extranjería</span>
+          <h3>¿Cuánto tarda un NIE en Madrid?</h3>
+          <p>Qué es, qué documentación necesitas y qué factores afectan los plazos.</p>
+        </div>
+      </a>
+      <a href="articulo-homologacion.html" style="text-decoration:none;">
+        <div class="blog-card">
+          <span class="blog-tag">Homologaciones</span>
+          <h3>Homologar tu título universitario: guía paso a paso</h3>
+          <p>Qué exige cada país de origen y cómo evitar los errores más comunes.</p>
+        </div>
+      </a>
+      <a href="articulo-autonomos.html" style="text-decoration:none;">
+        <div class="blog-card">
+          <span class="blog-tag">Empresas</span>
+          <h3>Darte de alta como autónomo: lo que nadie te explica</h3>
+          <p>Obligaciones fiscales, plazos y decisiones que conviene tomar bien desde el primer día.</p>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="recursos.html" class="btn-ghost" style="border-color:var(--gold); color:var(--navy-deep); display:inline-block;">Ver todos los artículos</a>
     </div>
   </div>
 </section>
@@ -637,8 +647,9 @@
         <a href="servicios.html">Servicios</a>
         <a href="sobre-mi.html">Sobre Mí</a>
         <a href="#proceso">Cómo trabajamos</a>
-        <a href="#recursos">Recursos</a>
+        <a href="recursos.html">Recursos</a>
         <a href="#opiniones">Opiniones</a>
+        <a href="contacto.html">Contacto</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
