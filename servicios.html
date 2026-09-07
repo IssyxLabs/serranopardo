@@ -6,18 +6,20 @@
 <title>Servicios — Serrano Pardo Gestores</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy-deep:#0F1D2E;
-    --navy-mid:#152A42;
+    --navy-deep:#6B3140;
+    --navy-mid:#57272F;
     --navy-line: rgba(255,255,255,0.14);
-    --gold:#B8934A;
-    --gold-bright:#D9B872;
-    --cream:#F7F3EA;
-    --paper:#FFFFFF;
-    --ink:#1C2431;
-    --ink-soft:#5A6472;
+    --gold:#6B3140;
+    --gold-bright:#8C4A57;
+    --rosa:#F8EEEC;
+    --rosa-hondo:#F1DFDA;
+    --cream:#FCF9F8;
+    --paper:#F8EEEC;
+    --ink:#2A2226;
+    --ink-soft:#8C6F6A;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -25,13 +27,13 @@
     margin:0;
     background:var(--cream);
     color:var(--ink);
-    font-family:'Inter',sans-serif;
+    font-family:'Karla',sans-serif;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3,.serif{font-family:'Playfair Display',serif;}
-  .script{font-family:'Mrs Saint Delafield',cursive; font-weight:400;}
+  h1,h2,h3,.serif{font-family:'Newsreader',serif;}
+  .script{font-family:'Newsreader',serif; font-style:italic; font-weight:500;}
   .eyebrow{
-    font-family:'Inter',sans-serif;
+    font-family:'Karla',sans-serif;
     font-size:0.72rem;
     letter-spacing:0.22em;
     text-transform:uppercase;
@@ -57,15 +59,15 @@
   .nav-links{display:flex; align-items:center; gap:34px;}
   .nav-right{display:flex; align-items:center; gap:30px;}
   .nav-links a{
-    color:#D7DCE3; font-size:0.85rem; font-weight:500; letter-spacing:0.02em;
+    color:#E9D9D5; font-size:0.85rem; font-weight:500; letter-spacing:0.02em;
     transition:color .2s;
   }
-  .nav-links a:hover{color:var(--gold-bright);}
+  .nav-links a:hover{color:var(--rosa);}
   .nav-toggle{
     display:none; flex-direction:column; justify-content:center; gap:5px;
     width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0;
   }
-  .nav-toggle span{display:block; width:22px; height:2px; background:#E7EAEE; transition:transform .25s ease, opacity .2s ease;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:#EAD9D5; transition:transform .25s ease, opacity .2s ease;}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
@@ -121,8 +123,8 @@
     padding:70px 0 70px 0;
     position:relative; z-index:2;
   }
-  .hero-eyebrow{color:var(--gold-bright); margin-bottom:22px; display:flex; align-items:center; gap:14px;}
-  .hero-eyebrow .rule{width:34px;height:1px;background:var(--gold);}
+  .hero-eyebrow{color:var(--rosa); margin-bottom:22px; display:flex; align-items:center; gap:14px;}
+  .hero-eyebrow .rule{width:34px;height:1px;background:var(--rosa-hondo);}
   .hero h1{
     color:var(--paper);
     font-size:3.05rem;
@@ -131,34 +133,34 @@
     margin:0 0 6px 0;
   }
   .hero h1 .script{
-    color:var(--gold-bright);
+    color:var(--rosa);
     font-size:1.5em;
     display:block;
     line-height:1;
     margin-top:2px;
   }
   .hero p.lede{
-    color:#B9C2CE;
+    color:#D9B8B3;
     font-size:1.08rem;
     line-height:1.65;
     max-width:460px;
     margin:26px 0 36px 0;
   }
-  .hero p.lede b{color:var(--gold-bright); font-weight:600;}
+  .hero p.lede b{color:var(--rosa); font-weight:600;}
   .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
   .btn-primary{
-    background:var(--gold); color:var(--navy-deep);
+    background:var(--rosa); color:var(--navy-deep);
     padding:15px 28px; font-weight:700; font-size:0.92rem;
     display:inline-flex; align-items:center; gap:10px;
     border-radius:2px; transition:all .2s;
   }
-  .btn-primary:hover{background:var(--gold-bright); transform:translateY(-1px);}
+  .btn-primary:hover{background:var(--rosa-hondo); transform:translateY(-1px);}
   .btn-ghost{
-    border:1px solid var(--navy-line); color:#E7EAEE;
+    border:1px solid var(--navy-line); color:#EAD9D5;
     padding:15px 26px; font-weight:600; font-size:0.92rem;
     border-radius:2px; transition:all .2s;
   }
-  .btn-ghost:hover{border-color:var(--gold); color:var(--gold-bright);}
+  .btn-ghost:hover{border-color:var(--rosa-hondo); color:var(--rosa);}
 
   .hero-photo-wrap{
     position:relative;
@@ -172,19 +174,19 @@
   }
   .hero-photo-fade{
     position:absolute; inset:0;
-    background:linear-gradient(270deg, var(--navy-deep) 0%, rgba(15,29,46,0.5) 14%, rgba(15,29,46,0) 38%);
+    background:linear-gradient(270deg, var(--navy-deep) 0%, rgba(107,49,64,0.5) 14%, rgba(107,49,64,0) 38%);
   }
   .hero-quote{
     margin:38px 0 0 0;
     padding-left:22px;
-    border-left:2px solid var(--gold);
+    border-left:2px solid var(--rosa-hondo);
     max-width:420px;
   }
   .hero-quote p{
-    color:var(--paper); font-family:'Playfair Display',serif; font-style:italic;
+    color:var(--paper); font-family:'Newsreader',serif; font-style:italic;
     font-size:1.15rem; line-height:1.5; margin:0 0 10px 0;
   }
-  .hero-quote cite{color:var(--gold-bright); font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; font-style:normal;}
+  .hero-quote cite{color:var(--rosa); font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; font-style:normal;}
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr; height:auto;}
     .hero-copy{order:1;}
@@ -203,7 +205,7 @@
   /* ---------- TRUST STRIP ---------- */
   .trust{
     background:var(--paper);
-    border-bottom:1px solid #E7E1D3;
+    border-bottom:1px solid #F1DFDA;
   }
   .trust-inner{
     display:flex; justify-content:space-between; align-items:center;
@@ -229,7 +231,7 @@
   /* ---------- SERVICES ---------- */
   .services-grid{
     display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
-    background:#E7E1D3; border:1px solid #E7E1D3;
+    background:#F1DFDA; border:1px solid #F1DFDA;
   }
   .service-card{
     background:var(--paper);
@@ -238,14 +240,14 @@
   }
   .service-card:hover{background:var(--navy-deep);}
   .service-card:hover .svc-title, .service-card:hover .svc-desc{color:var(--paper);}
-  .service-card:hover .svc-desc{color:#B9C2CE;}
-  .service-card:hover .svc-num{color:var(--gold-bright);}
+  .service-card:hover .svc-desc{color:#D9B8B3;}
+  .service-card:hover .svc-num{color:var(--rosa);}
   .svc-num{
-    font-family:'Playfair Display',serif; font-style:italic;
+    font-family:'Newsreader',serif; font-style:italic;
     color:var(--gold); font-size:1rem; display:block; margin-bottom:22px;
   }
   .svc-title{
-    font-family:'Playfair Display',serif; font-weight:600; font-size:1.18rem;
+    font-family:'Newsreader',serif; font-weight:600; font-size:1.18rem;
     color:var(--navy-deep); margin:0 0 10px 0; transition:color .25s;
   }
   .svc-desc{color:var(--ink-soft); font-size:0.9rem; line-height:1.55; transition:color .25s;}
@@ -255,8 +257,8 @@
   /* ---------- PROCESS ---------- */
   .process{background:var(--navy-deep); padding:96px 0;}
   .process .sec-head h2, .process .eyebrow{color:var(--paper);}
-  .process .sec-head p{color:#B9C2CE;}
-  .process .eyebrow{color:var(--gold-bright);}
+  .process .sec-head p{color:#D9B8B3;}
+  .process .eyebrow{color:var(--rosa);}
   .process-row{
     display:grid; grid-template-columns:repeat(5,1fr); gap:0;
     position:relative;
@@ -269,13 +271,13 @@
   .p-step{position:relative; padding:0 18px 0 0;}
   .p-num{
     width:52px;height:52px; border-radius:50%;
-    background:var(--navy-deep); border:1px solid var(--gold);
-    color:var(--gold-bright); font-family:'Playfair Display',serif; font-style:italic;
+    background:var(--navy-deep); border:1px solid var(--rosa-hondo);
+    color:var(--rosa); font-family:'Newsreader',serif; font-style:italic;
     display:flex; align-items:center; justify-content:center; font-size:1.1rem;
     margin-bottom:22px; position:relative; z-index:2;
   }
   .p-step h3{color:var(--paper); font-size:1.02rem; margin:0 0 8px 0; font-weight:600;}
-  .p-step p{color:#9AA6B4; font-size:0.85rem; line-height:1.5; margin:0;}
+  .p-step p{color:#C79992; font-size:0.85rem; line-height:1.5; margin:0;}
   @media(max-width:900px){
     .process-row{grid-template-columns:1fr 1fr; gap:34px;}
     .process-row::before{display:none;}
@@ -288,7 +290,7 @@
     background:var(--cream); border-top:2px solid var(--gold);
     padding:34px 30px;
   }
-  .testi-quote{font-family:'Playfair Display',serif; font-style:italic; font-size:2rem; color:var(--gold); line-height:1; margin-bottom:12px;}
+  .testi-quote{font-family:'Newsreader',serif; font-style:italic; font-size:2rem; color:var(--gold); line-height:1; margin-bottom:12px;}
   .testi-card p.body{color:var(--ink); font-size:0.95rem; line-height:1.6; margin:0 0 20px 0;}
   .testi-name{font-weight:700; font-size:0.88rem; color:var(--navy-deep);}
   .testi-role{color:var(--ink-soft); font-size:0.8rem;}
@@ -296,14 +298,14 @@
 
   /* ---------- SOFIA / WHATSAPP CTA ---------- */
   .sofia{
-    background:var(--gold);
+    background:var(--rosa);
     padding:70px 0;
   }
   .sofia-inner{
     display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
   }
   .sofia-copy h2{color:var(--navy-deep); font-size:1.9rem; margin:0 0 12px 0; font-weight:600;}
-  .sofia-copy p{color:#3A2F17; max-width:480px; line-height:1.6; margin:0;}
+  .sofia-copy p{color:#2A2226; max-width:480px; line-height:1.6; margin:0;}
   .sofia-btn{
     background:#25D366; color:#0B2B1C;
     padding:17px 32px; font-weight:700; font-size:0.95rem;
@@ -315,7 +317,7 @@
 
   /* ---------- BLOG ---------- */
   .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
-  .blog-card{background:var(--paper); border:1px solid #E7E1D3;}
+  .blog-card{background:var(--paper); border:1px solid #F1DFDA;}
   .blog-tag{
     color:var(--gold); font-size:0.72rem; font-weight:700; letter-spacing:0.1em;
     text-transform:uppercase; padding:24px 26px 0 26px; display:block;
@@ -327,10 +329,10 @@
   /* ---------- FOOTER ---------- */
   footer{background:var(--navy-deep); padding:70px 0 30px 0;}
   .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid var(--navy-line);}
-  .footer-brand p{color:#9AA6B4; font-size:0.88rem; line-height:1.6; max-width:280px; margin-top:16px;}
-  .footer-col h4{color:var(--gold-bright); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 18px 0;}
-  .footer-col a, .footer-col p{color:#B9C2CE; font-size:0.88rem; display:block; margin-bottom:10px; line-height:1.5;}
-  .footer-col a:hover{color:var(--gold-bright);}
+  .footer-brand p{color:#C79992; font-size:0.88rem; line-height:1.6; max-width:280px; margin-top:16px;}
+  .footer-col h4{color:var(--rosa); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 18px 0;}
+  .footer-col a, .footer-col p{color:#D9B8B3; font-size:0.88rem; display:block; margin-bottom:10px; line-height:1.5;}
+  .footer-col a:hover{color:var(--rosa);}
   .social-row{display:flex; gap:14px; margin-top:20px;}
   .social-row a{
     width:44px;height:44px; border-radius:50%;
@@ -339,7 +341,7 @@
   }
   .social-row a:hover{transform:translateY(-2px);}
   .footer-bottom{display:flex; justify-content:space-between; padding-top:24px; flex-wrap:wrap; gap:10px;}
-  .footer-bottom p{color:#6E7885; font-size:0.8rem; margin:0;}
+  .footer-bottom p{color:#9C7A75; font-size:0.8rem; margin:0;}
   @media(max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr; gap:32px;} }
   @media(max-width:560px){ .footer-grid{grid-template-columns:1fr;} }
 
@@ -352,9 +354,9 @@
   .page-hero .eyebrow{color:var(--gold-bright); margin-bottom:18px; display:flex; align-items:center; gap:12px;}
   .page-hero .eyebrow .rule{width:28px;height:1px;background:var(--gold);}
   .page-hero h1{color:var(--paper); font-size:2.5rem; font-weight:600; margin:0 0 16px 0; max-width:640px; line-height:1.2;}
-  .page-hero p{color:#B9C2CE; max-width:560px; line-height:1.65; font-size:1.03rem; margin:0 0 32px 0;}
+  .page-hero p{color:#D9B8B3; max-width:560px; line-height:1.65; font-size:1.03rem; margin:0 0 32px 0;}
   .quick-nav{display:flex; gap:12px; flex-wrap:wrap;}
-  .quick-nav a{border:1px solid var(--navy-line); color:#E7EAEE; padding:10px 20px; border-radius:999px; font-size:0.85rem; font-weight:600; transition:all .2s;}
+  .quick-nav a{border:1px solid var(--navy-line); color:#EAD9D5; padding:10px 20px; border-radius:999px; font-size:0.85rem; font-weight:600; transition:all .2s;}
   .quick-nav a:hover{border-color:var(--gold); color:var(--gold-bright);}
 
   /* ---------- SERVICE DETAIL SECTIONS ---------- */
@@ -433,17 +435,17 @@
   <div class="container service-detail-grid">
     <div>
       <div class="service-icon-badge">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6zm14 0l-3 6a3 3 0 0 0 6 0l-3-6zM5 7h14M9 3h6" stroke="#B8934A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6zm14 0l-3 6a3 3 0 0 0 6 0l-3-6zM5 7h14M9 3h6" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div class="eyebrow"><span class="rule"></span>01 — ASESORÍA LEGAL</div>
       <h2>Respuestas claras a preguntas complejas</h2>
       <p class="desc">Soluciones jurídicas integrales para particulares y empresas. Antes de tomar una decisión importante, consúltanos: te damos las alternativas reales que tienes, sin tecnicismos innecesarios.</p>
     </div>
     <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Consultas jurídicas para particulares y empresas</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Redacción y revisión de contratos</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Orientación y representación en procedimientos administrativos</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Segunda opinión legal antes de decidir</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Consultas jurídicas para particulares y empresas</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Redacción y revisión de contratos</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Orientación y representación en procedimientos administrativos</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Segunda opinión legal antes de decidir</li>
     </ul>
     <div></div>
     <a href="https://wa.me/34614737134?text=Hola%2C%20tengo%20una%20consulta%20de%20asesor%C3%ADa%20legal" target="_blank" rel="noopener" class="service-cta">
@@ -458,17 +460,17 @@
   <div class="container service-detail-grid">
     <div>
       <div class="service-icon-badge">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" stroke="#B8934A" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2" stroke="#B8934A" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" stroke="#6B3140" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round"/></svg>
       </div>
       <div class="eyebrow"><span class="rule"></span>02 — GESTIÓN ADMINISTRATIVA</div>
       <h2>Trámites ante la Administración, resueltos por ti</h2>
       <p class="desc">Por sencillo que parezca un trámite, puede complicarse si no conoces todos los pasos. Nosotros ya los conocemos — nos encargamos de principio a fin, con seguimiento constante.</p>
     </div>
     <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro Civil: nacimientos, matrimonios, defunciones, nacionalidad</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Trámites ante el Ayuntamiento y la Comunidad de Madrid</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Seguridad Social: altas, bajas, jubilación y convenios bilaterales (España–Venezuela, España–Uruguay y otros)</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Homologación y convalidación de títulos extranjeros</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro Civil: nacimientos, matrimonios, defunciones, nacionalidad</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Trámites ante el Ayuntamiento y la Comunidad de Madrid</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Seguridad Social: altas, bajas, jubilación y convenios bilaterales (España–Venezuela, España–Uruguay y otros)</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Homologación y convalidación de títulos extranjeros</li>
     </ul>
     <div></div>
     <a href="https://wa.me/34614737134?text=Hola%2C%20necesito%20ayuda%20con%20un%20tr%C3%A1mite" target="_blank" rel="noopener" class="service-cta">
@@ -483,17 +485,17 @@
   <div class="container service-detail-grid">
     <div>
       <div class="service-icon-badge">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#B8934A" stroke-width="1.4"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="#B8934A" stroke-width="1.4"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6B3140" stroke-width="1.4"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="#6B3140" stroke-width="1.4"/></svg>
       </div>
       <div class="eyebrow"><span class="rule"></span>03 — EXTRANJERÍA</div>
       <h2>Te acompañamos en cada paso del proceso migratorio</h2>
       <p class="desc">Residencias, nacionalidad, visados y homologaciones. Sabemos lo que está en juego para ti y tu familia, y te explicamos cada paso en un lenguaje que entiendes.</p>
     </div>
     <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Residencias y renovaciones: no lucrativa, por arraigo, comunitaria</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nacionalidad española por residencia</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visados: estudiantes, trabajo, Golden Visa, familiares de comunitarios</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asilo y régimen no comunitario</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Residencias y renovaciones: no lucrativa, por arraigo, comunitaria</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nacionalidad española por residencia</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visados: estudiantes, trabajo, Golden Visa, familiares de comunitarios</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asilo y régimen no comunitario</li>
     </ul>
     <div></div>
     <a href="https://wa.me/34614737134?text=Hola%2C%20tengo%20una%20consulta%20de%20extranjer%C3%ADa" target="_blank" rel="noopener" class="service-cta">
@@ -508,17 +510,17 @@
   <div class="container service-detail-grid">
     <div>
       <div class="service-icon-badge">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="1.5" stroke="#B8934A" stroke-width="1.4"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" stroke="#B8934A" stroke-width="1.4"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="1.5" stroke="#6B3140" stroke-width="1.4"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" stroke="#6B3140" stroke-width="1.4"/></svg>
       </div>
       <div class="eyebrow"><span class="rule"></span>04 — EMPRESAS</div>
       <h2>Seguridad jurídica para que tu negocio crezca</h2>
       <p class="desc">Desde darte de alta como autónomo hasta la gestión continua de tu empresa. Un mismo interlocutor para todo lo legal y administrativo, para que tú te enfoques en crecer.</p>
     </div>
     <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alta de autónomos y constitución de sociedades</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asesoría legal continua para pymes</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Gestión de trámites laborales y administrativos del negocio</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#B8934A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Acompañamiento en crecimiento y cumplimiento normativo</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alta de autónomos y constitución de sociedades</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asesoría legal continua para pymes</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Gestión de trámites laborales y administrativos del negocio</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Acompañamiento en crecimiento y cumplimiento normativo</li>
     </ul>
     <div></div>
     <a href="https://wa.me/34614737134?text=Hola%2C%20tengo%20una%20consulta%20para%20mi%20empresa" target="_blank" rel="noopener" class="service-cta">
@@ -534,7 +536,7 @@
     <img src="images/servicios-photo.jpg" alt="Montserrat Serrano Pardo" style="width:220px; border:1px solid var(--gold); flex-shrink:0; display:block;">
     <div style="flex:1; min-width:260px;">
       <div class="eyebrow" style="color:var(--gold); display:flex; align-items:center; gap:12px; margin-bottom:14px;"><span class="rule" style="width:28px;height:1px;background:var(--gold);"></span>UN MISMO INTERLOCUTOR</div>
-      <h2 style="font-size:1.6rem; color:var(--navy-deep); margin:0 0 12px 0; font-family:'Playfair Display',serif; font-weight:600;">Cada servicio, gestionado personalmente por Montserrat</h2>
+      <h2 style="font-size:1.6rem; color:var(--navy-deep); margin:0 0 12px 0; font-family:'Newsreader',serif; font-weight:600;">Cada servicio, gestionado personalmente por Montserrat</h2>
       <p style="color:var(--ink-soft); line-height:1.7; max-width:520px; margin:0;">Más de 30 años de experiencia legal respaldan cada trámite que gestionamos. No es un equipo rotativo — eres tú y ella, de principio a fin.</p>
     </div>
   </div>
@@ -597,9 +599,9 @@
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
-        <a href="tel:+34618433773">(+34) 618 43 37 73</a>
+        <a href="tel:+34919959747">(+34) 91 995 97 47</a>
         <a href="mailto:info@serranopardogestores.com">info@serranopardogestores.com</a>
-        <p>Calle Mayor, 50<br>28921 Alcorcón, Madrid<br>España</p>
+        <p>Calle Mayor 50, 3.º A<br>28921 Alcorcón (Madrid)<br>España</p>
       </div>
       <div class="footer-col">
         <h4>Enlaces</h4>
