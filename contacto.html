@@ -474,7 +474,7 @@
 <section class="sec sec-alt">
   <div class="container contact-grid2">
     <div>
-      <form class="contact-form" action="mailto:info@serranopardogestores.com" method="post" enctype="text/plain">
+      <form class="contact-form" id="contactForm" action="mailto:info@serranopardogestores.com" method="post" enctype="text/plain">
         <div class="form-field">
           <label for="cf-nombre">Nombre</label>
           <input type="text" id="cf-nombre" name="Nombre" required>
@@ -646,6 +646,24 @@
   document.querySelectorAll('.sec-head, .service-card, .testi-card, .blog-card').forEach(el=>{
     el.classList.add('reveal'); io.observe(el);
   });
+
+  // Construye un mailto: con asunto y cuerpo legibles en lugar del envío
+  // "Nombre=...\nCanal=..." en crudo que produce el formulario por defecto.
+  const contactForm = document.getElementById('contactForm');
+  if(contactForm){
+    contactForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const nombre = document.getElementById('cf-nombre').value.trim();
+      const canal = document.getElementById('cf-canal').value;
+      const caso = document.getElementById('cf-caso').value.trim();
+      const subject = `Consulta desde la web — ${nombre}`;
+      const body =
+        `Nombre: ${nombre}\n` +
+        `Canal preferido de respuesta: ${canal}\n\n` +
+        `Caso:\n${caso}`;
+      window.location.href = `mailto:info@serranopardogestores.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
 </script>
 
 
