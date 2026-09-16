@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Serrano Pardo Gestores — Asesoría Legal y Gestión Administrativa en Madrid</title>
+<title>Abogada de extranjería y gestora administrativa en Madrid · Serrano Pardo</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,.serif{font-family:'Newsreader',serif;}
-  .script{font-family:'Newsreader',serif; font-style:italic; font-weight:500;}
+  .script{font-family:'Newsreader',serif; font-weight:500;}
   .eyebrow{
     font-family:'Karla',sans-serif;
     font-size:0.72rem;
@@ -124,7 +124,8 @@
     grid-template-columns:1.05fr 0.95fr;
     align-items:center;
     gap:40px;
-    padding:72px 0;
+    padding-top:72px;
+    padding-bottom:72px;
   }
   .hero-copy{
     display:flex; flex-direction:column; justify-content:center;
@@ -139,7 +140,7 @@
     font-weight:600;
     margin:0;
   }
-  .hero h1 em{font-style:italic; font-weight:500;}
+  .hero h1 em{font-style:normal; font-weight:500;}
   .hero p.lede{
     color:#D9B8B3;
     font-size:1.08rem;
@@ -183,7 +184,7 @@
     filter: saturate(0.94) contrast(1.02);
   }
   @media(max-width:900px){
-    .hero-grid{grid-template-columns:1fr; padding:48px 0 40px 0; gap:34px;}
+    .hero-grid{grid-template-columns:1fr; padding-top:48px; padding-bottom:40px; gap:34px;}
     .hero h1{font-size:2.2rem;}
     .hero-photo-arch{max-width:280px;}
   }
@@ -195,13 +196,13 @@
   }
   .trust-inner{
     display:flex; justify-content:space-between; align-items:center;
-    padding:22px 0; flex-wrap:wrap; gap:18px;
+    padding-top:22px; padding-bottom:22px; flex-wrap:wrap; gap:18px;
   }
   .trust-item{display:flex; align-items:center; gap:10px; color:var(--ink-soft); font-size:0.86rem; font-weight:500;}
   .trust-item svg{flex-shrink:0;}
   .trust-item b{color:var(--ink); font-weight:700;}
   @media(max-width:560px){
-    .trust-inner{justify-content:flex-start; gap:14px 22px; padding:18px 0;}
+    .trust-inner{justify-content:flex-start; gap:14px 22px; padding-top:18px; padding-bottom:18px;}
     .trust-item{font-size:0.8rem;}
   }
 
@@ -214,46 +215,20 @@
   .sec-head h2{font-size:2.3rem; color:var(--navy-deep); font-weight:600; line-height:1.2; margin:0;}
   .sec-head p{color:var(--ink-soft); margin-top:16px; line-height:1.6; font-size:1.02rem;}
 
-  /* ---------- SERVICES ---------- */
-  .services-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
-    background:#F1DFDA; border:1px solid #F1DFDA;
-  }
-  .service-card{
-    background:var(--paper);
-    padding:38px 30px;
-    transition:background .25s;
-  }
-  .service-card:hover{background:var(--navy-deep);}
-  .service-card:hover .svc-title, .service-card:hover .svc-desc{color:var(--paper);}
-  .service-card:hover .svc-desc{color:#D9B8B3;}
-  .service-card:hover .svc-num{color:var(--rosa);}
-  .svc-num{
-    font-family:'Newsreader',serif; font-style:italic;
-    color:var(--gold); font-size:1rem; display:block; margin-bottom:22px;
-  }
-  .svc-title{
-    font-family:'Newsreader',serif; font-weight:600; font-size:1.18rem;
-    color:var(--navy-deep); margin:0 0 10px 0; transition:color .25s;
-  }
-  .svc-desc{color:var(--ink-soft); font-size:0.9rem; line-height:1.55; transition:color .25s;}
-  @media(max-width:900px){ .services-grid{grid-template-columns:1fr 1fr;} }
-  @media(max-width:560px){ .services-grid{grid-template-columns:1fr;} }
-
   /* ---------- TODO LO QUE NECESITAS ---------- */
   .necesitas{padding:96px 0; background:var(--cream);}
   .necesitas-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;}
   .necesitas-head .eyebrow{color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:12px;}
   .necesitas-head .eyebrow .rule{width:28px;height:1px;background:var(--gold);}
   .necesitas-head h2{font-size:2rem; color:var(--navy-deep); font-weight:600; line-height:1.25; margin:0 0 34px 0;}
-  .necesitas-head h2 em{font-style:italic; font-weight:500;}
+  .necesitas-head h2 em{font-style:normal; font-weight:500;}
   .necesitas-table{border-top:1px solid #F1DFDA;}
   .necesitas-row{display:grid; grid-template-columns:44px 1fr; gap:14px; padding:20px 0; border-bottom:1px solid #F1DFDA;}
-  .necesitas-row .n{font-family:'Newsreader',serif; font-style:italic; color:var(--gold); font-size:0.95rem;}
+  .necesitas-row .n{font-family:'Newsreader',serif; font-weight:600; color:var(--gold); font-size:0.95rem;}
   .necesitas-row h3{margin:0 0 6px 0; font-size:1rem; color:var(--ink); font-weight:700; font-family:'Karla',sans-serif;}
   .necesitas-row p{margin:0; color:var(--ink-soft); font-size:0.9rem; line-height:1.5;}
   .necesitas-aside h3{
-    font-family:'Newsreader',serif; font-weight:500; font-style:italic; font-size:1.35rem;
+    font-family:'Newsreader',serif; font-weight:500; font-size:1.35rem;
     color:var(--navy-deep); margin:0 0 22px 0; line-height:1.3;
   }
   .necesitas-list{display:grid; grid-template-columns:1fr 1fr; gap:0 24px; margin:0 0 26px 0; padding:0; list-style:none;}
@@ -268,10 +243,6 @@
     padding:22px 24px;
   }
   .necesitas-cta p{margin:0 0 16px 0; color:var(--ink); font-size:0.96rem; line-height:1.5;}
-  .necesitas-venezuela{
-    background:var(--rosa); border-left:3px solid var(--navy-deep);
-    padding:18px 22px; margin-top:18px; font-size:0.88rem; line-height:1.55; color:var(--ink);
-  }
   @media(max-width:900px){
     .necesitas-grid{grid-template-columns:1fr; gap:40px;}
     .necesitas-list{grid-template-columns:1fr;}
@@ -295,7 +266,7 @@
   .p-num{
     width:52px;height:52px; border-radius:50%;
     background:var(--navy-deep); border:1px solid var(--rosa-hondo);
-    color:var(--rosa); font-family:'Newsreader',serif; font-style:italic;
+    color:var(--rosa); font-family:'Newsreader',serif; font-weight:600;
     display:flex; align-items:center; justify-content:center; font-size:1.1rem;
     margin-bottom:22px; position:relative; z-index:2;
   }
@@ -314,7 +285,7 @@
     padding:34px 30px;
   }
   .testi-stars{display:flex; gap:3px; margin-bottom:14px;}
-  .testi-quote{font-family:'Newsreader',serif; font-style:italic; font-size:2rem; color:var(--gold); line-height:1; margin-bottom:12px;}
+  .testi-quote{font-family:'Newsreader',serif; font-weight:600; font-size:2rem; color:var(--gold); line-height:1; margin-bottom:12px;}
   .testi-card p.body{color:var(--ink); font-size:0.95rem; line-height:1.6; margin:0 0 22px 0;}
   .testi-person{display:flex; align-items:center; gap:12px;}
   .testi-avatar{
@@ -433,7 +404,7 @@
     <div class="hero-copy">
       <div class="hero-eyebrow eyebrow"><span class="rule"></span>ABOGADA DE EXTRANJERÍA Y GESTORA ADMINISTRATIVA · MADRID</div>
       <h1>Detrás de cada trámite <em>hay una persona</em></h1>
-      <p class="lede">Más de <b>30 años</b> en extranjería y nacionalidad, y en la gestión contable, laboral y fiscal de autónomos y pymes.</p>
+      <p class="lede">Extranjería, nacionalidad, homologaciones, pensiones y la gestión contable, laboral y fiscal de autónomos y pequeñas empresas.</p>
       <div class="hero-actions">
         <a href="contacto.html" class="btn-primary">
           Pide tu consulta
@@ -473,8 +444,8 @@
 <!-- TRUST STRIP -->
 <div class="trust">
   <div class="container trust-inner">
-    <div class="trust-item"><b>30+</b>&nbsp;años de experiencia</div>
-    <div class="trust-item"><b>4.9 / 5</b>&nbsp;valoración media en Google</div>
+    <div class="trust-item"><b>Colegiada en España y en Venezuela</b></div>
+    <a class="trust-item" href="https://g.page/r/CfaUWzKVCbT2EBM" target="_blank" rel="noopener"><b>4.9 / 5</b>&nbsp;valoración media en Google</a>
   </div>
 </div>
 
@@ -484,84 +455,62 @@
     <div class="necesitas-col">
       <div class="necesitas-head">
         <div class="eyebrow"><span class="rule"></span>ABOGADA EN ESPAÑA Y EN VENEZUELA · GESTORA ADMINISTRATIVA</div>
-        <h2>Todo lo que necesitas, <em>en el mismo despacho</em></h2>
+        <h2>Todo lo que necesitas, en el mismo despacho</h2>
       </div>
       <div class="necesitas-table">
         <div class="necesitas-row">
           <span class="n">01</span>
-          <div><h3>Extranjería y nacionalidad</h3><p>Residencias, renovaciones, recursos y nacionalidad española</p></div>
+          <div><h3>Extranjería y nacionalidad</h3><p>Residencias, renovaciones, prórrogas, recursos y nacionalidad española</p></div>
         </div>
         <div class="necesitas-row">
           <span class="n">02</span>
-          <div><h3>Trámites con la Administración</h3><p>Pensiones, convenios bilaterales y gestiones ante organismos públicos</p></div>
+          <div><h3>Homologaciones</h3><p>Títulos de bachiller, universitarios y de especialidad</p></div>
         </div>
         <div class="necesitas-row">
           <span class="n">03</span>
-          <div><h3>Contable, laboral y fiscal</h3><p>Autónomos y pequeñas empresas</p></div>
+          <div><h3>Pensiones y convenios internacionales</h3><p>Jubilación, invalidez y viudedad sumando periodos cotizados en varios países</p></div>
         </div>
         <div class="necesitas-row">
           <span class="n">04</span>
-          <div><h3>Documentos venezolanos</h3><p>Redacción y visado de poderes, autorizaciones de viaje de menores y certificados, y te explico qué hacer después para que sean válidos</p></div>
+          <div><h3>Trámites con la Administración</h3><p>Registro Civil, Seguridad Social y Comunidad de Madrid</p></div>
         </div>
         <div class="necesitas-row">
           <span class="n">05</span>
-          <div><h3>Seguros</h3><p>Enlace directo a la correduría</p></div>
+          <div><h3>Contable, laboral y fiscal</h3><p>Autónomos y pequeñas empresas</p></div>
+        </div>
+        <div class="necesitas-row">
+          <span class="n">06</span>
+          <div><h3>Documentos venezolanos</h3><p>Poderes, certificados y otros documentos, redactados y visados con colegiación activa en Venezuela</p></div>
         </div>
       </div>
-      <div class="necesitas-venezuela">Estos documentos los redacta y los visa ella misma, como abogada colegiada en el Ilustre Colegio de Abogados de Caracas (IPSA 38.508), en ejercicio activo. La redacción es solo el primer paso: la validez depende después de la firma ante notario y de la legalización ante el Consulado de Venezuela en España, y eso no está en su mano.</div>
     </div>
     <div class="necesitas-aside">
-      <h3>Te acompañamos en tu <em>trámite de extranjería</em></h3>
+      <h3>Te acompañamos en tu trámite de extranjería</h3>
       <ul class="necesitas-list">
         <li>Estancia por estudios</li>
-        <li>Profesional altamente cualificado</li>
-        <li>Arraigo</li>
-        <li>Investigación y doctorado</li>
-        <li>Residencia de familiar de español</li>
-        <li>Renovaciones y prórrogas</li>
-        <li>Residencia de familiar de comunitario</li>
-        <li>Recursos, incluido el contencioso-administrativo</li>
+        <li>Familiar de comunitario</li>
+        <li>Arraigo social</li>
         <li>Nómada digital</li>
+        <li>Arraigo sociolaboral</li>
+        <li>Profesional altamente cualificado</li>
+        <li>Arraigo socioformativo</li>
+        <li>Investigación y doctorado</li>
+        <li>Arraigo familiar</li>
+        <li>Renovaciones y prórrogas</li>
+        <li>Arraigo de segunda oportunidad</li>
+        <li>Recursos, incluido el contencioso-administrativo</li>
+        <li>Familiar de español</li>
         <li><b>Nacionalidad española</b></li>
       </ul>
-      <div class="necesitas-note">El trámite lo lleva la gestora; el recurso, la abogada. Aquí son <b>la misma persona</b>, así que tu expediente no cambia de manos si hay que pelearlo.</div>
+      <div class="necesitas-note">
+        <p style="margin:0 0 10px 0;"><b>El seguro médico.</b> Varias residencias exigen un seguro de salud, y no vale cualquiera: cada trámite tiene sus requisitos. Te decimos exactamente qué debe cubrir tu póliza para que no te la rechacen.</p>
+        <p style="margin:0 0 10px 0;">¿Necesitas ayuda para contratarlo? <a href="tel:+34925960015" style="color:var(--navy-deep); font-weight:700; text-decoration:underline;">Habla con Cautelia Seguros — 925 96 00 15</a></p>
+        <p style="margin:0; font-size:0.82rem; color:var(--ink-soft); line-height:1.5;">Cautelia Seguros tiene nuestra absoluta confianza: trabajamos con ellos desde que empezamos con extranjería. Es una correduría independiente, y la póliza se contrata directamente con ella, que es también quien te asesora sobre el seguro.</p>
+      </div>
       <p>Asesoramos también a <b>autónomos y pequeñas empresas</b>, con acompañamiento contable, laboral y fiscal.</p>
       <div class="necesitas-cta">
         <p>¿Estás pensando en venir a vivir a España? Consulta con nosotros: analizamos tu caso y te damos las opciones adaptadas a tu realidad y a tus posibilidades.</p>
         <a href="contacto.html" class="btn-ghost" style="border-color:var(--navy-deep); color:var(--navy-deep); display:inline-block;">Cuéntame tu caso</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section class="sec sec-alt" id="servicios">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow"><span class="rule"></span>QUÉ HACEMOS</div>
-      <h2>Cuatro áreas, una sola gestora de confianza</h2>
-      <p>Desde tu primer trámite hasta la gestión continua de tu empresa, todo bajo el mismo acompañamiento cercano.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="svc-num">01</span>
-        <h3 class="svc-title">Asesoría legal</h3>
-        <p class="svc-desc">Soluciones jurídicas integrales para particulares y empresas, con respuestas claras a preguntas complejas.</p>
-      </div>
-      <div class="service-card">
-        <span class="svc-num">02</span>
-        <h3 class="svc-title">Gestiones administrativas</h3>
-        <p class="svc-desc">Trámites ante la Administración Pública — Seguridad Social, Ayuntamiento, Comunidad de Madrid — resueltos con agilidad.</p>
-      </div>
-      <div class="service-card">
-        <span class="svc-num">03</span>
-        <h3 class="svc-title">Extranjería</h3>
-        <p class="svc-desc">Residencias, renovaciones, nacionalidad y homologaciones. Te acompañamos en cada paso del proceso migratorio.</p>
-      </div>
-      <div class="service-card">
-        <span class="svc-num">04</span>
-        <h3 class="svc-title">Empresas</h3>
-        <p class="svc-desc">Asesoría legal y de gestión pensada para el crecimiento y la seguridad jurídica de tu negocio.</p>
       </div>
     </div>
   </div>
@@ -577,7 +526,7 @@
       <p>Atiendo a nivel nacional e internacional. Da igual dónde estés: en Madrid, en cualquier punto de España, o todavía en tu país pensando en venirte a vivir aquí.</p>
     </div>
     <div class="process-row">
-      <div class="p-step"><div class="p-num">1</div><h3>Consulta</h3><p>Nos cuentas tu situación por WhatsApp, teléfono o en despacho.</p></div>
+      <div class="p-step"><div class="p-num">1</div><h3>Consulta</h3><p>Nos escribes, por el formulario o por WhatsApp. La consulta puede ser presencial o a distancia, tú decides. En la fecha acordada, te atenderemos y analizaremos tus opciones.</p></div>
       <div class="p-step"><div class="p-num">2</div><h3>Presupuesto</h3><p>Te explico con claridad las opciones y lo que cuesta cada una, sin sorpresas.</p></div>
       <div class="p-step"><div class="p-num">3</div><h3>Gestión</h3><p>Preparamos y presentamos toda la documentación por ti.</p></div>
       <div class="p-step"><div class="p-num">4</div><h3>Seguimiento</h3><p>Te avisamos de cada avance, sin que tengas que preguntar.</p></div>
@@ -592,6 +541,7 @@
     <div class="sec-head">
       <div class="eyebrow"><span class="rule"></span>OPINIONES</div>
       <h2>Lo que dicen quienes ya confiaron en nosotros</h2>
+      <p><a href="https://g.page/r/CfaUWzKVCbT2EBM" target="_blank" rel="noopener" style="color:var(--gold); font-weight:700; text-decoration:underline; text-underline-offset:2px;">Ver todas las opiniones en Google</a> · <a href="https://g.page/r/CfaUWzKVCbT2EBM/review" target="_blank" rel="noopener" style="color:var(--gold); font-weight:700; text-decoration:underline; text-underline-offset:2px;">Escribe tu opinión</a></p>
     </div>
     <div class="testi-wrap">
       <div class="testi-card">
@@ -602,7 +552,7 @@
           <div class="testi-avatar">M</div>
           <div>
             <div class="testi-name">María Teresa</div>
-            <div class="testi-role">Support</div>
+            <div class="testi-role">Cliente</div>
           </div>
         </div>
       </div>
@@ -614,7 +564,7 @@
           <div class="testi-avatar">J</div>
           <div>
             <div class="testi-name">Jorge</div>
-            <div class="testi-role">Support</div>
+            <div class="testi-role">Cliente</div>
           </div>
         </div>
       </div>
@@ -652,7 +602,7 @@
   <div class="container sofia-inner">
     <div class="sofia-copy">
       <h2>¿Tienes una duda ahora mismo?</h2>
-      <p>Escribe por WhatsApp y Sofía, nuestra asistente virtual, te orientará al instante — y si tu caso lo requiere, agenda tu cita con Montserrat directamente.</p>
+      <p>Escribe por WhatsApp y Sofía, nuestra asistente virtual, te orientará — y si tu caso lo requiere, agenda tu cita con Montserrat directamente.</p>
     </div>
     <a href="https://wa.me/34614737134" target="_blank" rel="noopener" class="sofia-btn">
       <svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M17.1 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z" fill="#25D366"/><path d="M12 4a8 8 0 0 0-6.9 12L4 20l4.1-1.1A8 8 0 1 0 12 4z" fill="none" stroke="#25D366" stroke-width="1.3"/></svg>
@@ -706,7 +656,7 @@
         <a class="brand" href="index.html" aria-label="Ir a la página principal">
           <img src="images/logo.png" alt="Serrano Pardo Gestores" class="brand-logo brand-logo-footer">
         </a>
-        <p>Asesoría legal y gestión administrativa con profesionalidad, empatía y resultados. Experiencia, compromiso, resultados.</p>
+        <p>Abogacía y gestión administrativa en Madrid. Extranjería, nacionalidad, homologaciones, pensiones y gestión contable, laboral y fiscal de autónomos y pequeñas empresas.</p>
         <div class="social-row">
           <a href="https://www.instagram.com/serranopardogestores" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="44" height="44" viewBox="0 0 44 44">

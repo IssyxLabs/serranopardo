@@ -392,6 +392,69 @@
     .service-detail-grid{grid-template-columns:1fr; gap:30px;}
   }
 
+  /* ---------- AREA LIST (two columns) ---------- */
+  .area-list{
+    list-style:none; margin:0 0 28px 0; padding:0;
+    display:grid; grid-template-columns:1fr 1fr; gap:10px 24px;
+  }
+  .area-list li{
+    display:flex; gap:10px; align-items:flex-start;
+    color:var(--ink); font-size:0.94rem; line-height:1.45;
+  }
+  .area-list li svg{flex-shrink:0; margin-top:3px;}
+  @media(max-width:560px){ .area-list{grid-template-columns:1fr;} }
+
+  /* ---------- CALLOUT ---------- */
+  .callout{
+    background:var(--cream); border-left:3px solid var(--gold);
+    padding:20px 22px; margin:0 0 20px 0;
+  }
+  .callout h4{
+    font-family:'Karla',sans-serif; font-weight:700; font-size:0.82rem;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--navy-deep);
+    margin:0 0 10px 0;
+  }
+  .callout p{color:var(--ink); font-size:0.94rem; line-height:1.6; margin:0 0 10px 0;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout .fine-print{color:var(--ink-soft); font-size:0.84rem; line-height:1.55;}
+  .callout-link{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--navy-deep); font-weight:700; font-size:0.92rem;
+    border-bottom:2px solid var(--gold); padding-bottom:2px; width:fit-content;
+  }
+  .callout-link:hover{color:#25D366; border-color:#25D366;}
+
+  /* ---------- SUB-GROUP (dentro de un bloque de servicio) ---------- */
+  .sub-group{margin-bottom:22px;}
+  .sub-group:last-of-type{margin-bottom:0;}
+  .sub-group h4{
+    font-family:'Karla',sans-serif; font-weight:700; font-size:0.78rem;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--gold);
+    margin:0 0 8px 0;
+  }
+  .sub-group p{color:var(--ink); font-size:0.97rem; line-height:1.65; margin:0;}
+
+  .service-detail p.desc + p.desc{margin-top:14px;}
+
+  /* ---------- CIERRE: ¿Y SI ME LO DENIEGAN? ---------- */
+  .denegacion{background:var(--navy-deep); padding:90px 0;}
+  .denegacion .eyebrow{color:var(--rosa); margin-bottom:16px; display:flex; align-items:center; gap:12px;}
+  .denegacion .eyebrow .rule{width:28px;height:1px;background:var(--gold-bright);}
+  .denegacion h2{color:var(--paper); font-size:2.1rem; font-weight:600; margin:0 0 26px 0; max-width:640px; line-height:1.25;}
+  .denegacion-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:start;}
+  .denegacion p{color:#D9B8B3; font-size:1rem; line-height:1.75; margin:0 0 18px 0;}
+  .denegacion p:last-child{margin-bottom:0;}
+  .denegacion-quote{
+    border-left:2px solid var(--rosa-hondo); padding-left:22px; margin:0 0 30px 0;
+  }
+  .denegacion-quote p{
+    font-family:'Newsreader',serif; font-weight:500; color:var(--paper);
+    font-size:1.25rem; line-height:1.5; margin:0;
+  }
+  .denegacion .service-cta{color:var(--rosa); border-color:var(--gold-bright);}
+  .denegacion .service-cta:hover{color:#25D366; border-color:#25D366;}
+  @media(max-width:900px){ .denegacion-grid{grid-template-columns:1fr; gap:20px;} }
+
 </style>
 </head>
 <body>
@@ -432,122 +495,222 @@
     <h1>Todo lo que tu situación necesita, resuelto por el mismo equipo</h1>
     <p>Desde tu primer trámite hasta la gestión continua de tu empresa. Elige el área que te interesa o escríbenos directamente si no sabes por dónde empezar.</p>
     <div class="quick-nav">
-      <a href="#asesoria">Asesoría Legal</a>
-      <a href="#tramites">Trámites</a>
-      <a href="#extranjeria">Extranjería</a>
-      <a href="#empresas">Empresas</a>
+      <a href="#extranjeria">Extranjería y nacionalidad</a>
+      <a href="#homologaciones">Homologaciones</a>
+      <a href="#pensiones">Pensiones</a>
+      <a href="#tramites">Trámites con la Administración</a>
+      <a href="#contable">Contable, laboral y fiscal</a>
+      <a href="#venezuela">Documentos venezolanos</a>
     </div>
   </div>
 </section>
 
-<!-- ASESORÍA LEGAL -->
-<section class="service-detail" id="asesoria">
-  <div class="container service-detail-grid">
-    <div>
-      <div class="service-icon-badge">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6zm14 0l-3 6a3 3 0 0 0 6 0l-3-6zM5 7h14M9 3h6" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="eyebrow"><span class="rule"></span>01 — ASESORÍA LEGAL</div>
-      <h2>Respuestas claras a preguntas complejas</h2>
-      <p class="desc">Soluciones jurídicas integrales para particulares y empresas. Antes de tomar una decisión importante, consúltanos: te damos las alternativas reales que tienes, sin tecnicismos innecesarios.</p>
-    </div>
-    <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Consultas jurídicas para particulares y empresas</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Redacción y revisión de contratos</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Orientación y representación en procedimientos administrativos</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Segunda opinión legal antes de decidir</li>
-    </ul>
-    <div></div>
-    <a href="mailto:info@serranopardogestores.com?subject=Consulta%20de%20asesor%C3%ADa%20legal" class="service-cta">
-      Consultar sobre asesoría legal
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- TRÁMITES / GESTIÓN ADMINISTRATIVA -->
-<section class="service-detail alt" id="tramites">
-  <div class="container service-detail-grid">
-    <div>
-      <div class="service-icon-badge">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" stroke="#6B3140" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </div>
-      <div class="eyebrow"><span class="rule"></span>02 — GESTIÓN ADMINISTRATIVA</div>
-      <h2>Trámites ante la Administración, resueltos por ti</h2>
-      <p class="desc">Por sencillo que parezca un trámite, puede complicarse si no conoces todos los pasos. Nosotros ya los conocemos — nos encargamos de principio a fin, con seguimiento constante.</p>
-    </div>
-    <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro Civil: nacimientos, matrimonios, defunciones, nacionalidad</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Trámites ante el Ayuntamiento y la Comunidad de Madrid</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Seguridad Social: altas, bajas, jubilación y convenios bilaterales (España–Venezuela, España–Uruguay y otros)</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Homologación y convalidación de títulos extranjeros</li>
-    </ul>
-    <div></div>
-    <a href="mailto:info@serranopardogestores.com?subject=Consulta%20sobre%20un%20tr%C3%A1mite" class="service-cta">
-      Consultar sobre un trámite
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- EXTRANJERÍA -->
+<!-- 01 · EXTRANJERÍA Y NACIONALIDAD -->
 <section class="service-detail" id="extranjeria">
   <div class="container service-detail-grid">
     <div>
       <div class="service-icon-badge">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6B3140" stroke-width="1.4"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="#6B3140" stroke-width="1.4"/></svg>
       </div>
-      <div class="eyebrow"><span class="rule"></span>03 — EXTRANJERÍA</div>
-      <h2>Te acompañamos en cada paso del proceso migratorio</h2>
-      <p class="desc">Residencias, nacionalidad, visados y homologaciones. Sabemos lo que está en juego para ti y tu familia, y te explicamos cada paso en un lenguaje que entiendes.</p>
+      <div class="eyebrow"><span class="rule"></span>01 — EXTRANJERÍA Y NACIONALIDAD</div>
+      <h2>Llevamos el expediente entero</h2>
+      <p class="desc">Preparamos la documentación, lo presentamos, seguimos su estado y, si llega una resolución negativa, recurrimos.</p>
     </div>
-    <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Residencias y renovaciones: no lucrativa, por arraigo, comunitaria</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nacionalidad española por residencia</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visados: estudiantes, trabajo, Golden Visa, familiares de comunitarios</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asilo y régimen no comunitario</li>
-    </ul>
-    <div></div>
-    <a href="mailto:info@serranopardogestores.com?subject=Consulta%20de%20extranjer%C3%ADa" class="service-cta">
-      Consultar sobre extranjería
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <div>
+      <ul class="area-list">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Estancia por estudios</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Familiar de comunitario</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Arraigo social</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nómada digital</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Arraigo sociolaboral</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Profesional altamente cualificado</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Arraigo socioformativo</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Investigación y doctorado</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Arraigo familiar</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Renovaciones y prórrogas</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Arraigo de segunda oportunidad</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Recursos, incluido el contencioso-administrativo</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Familiar de español</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nacionalidad española</li>
+      </ul>
+      <div class="callout">
+        <h4>Los visados</h4>
+        <p>El visado se pide en el consulado y hay que ir en persona: es un trámite que nadie puede hacer por ti.</p>
+        <p>Lo que sí hacemos es que llegues preparado. Te decimos qué documentación te van a pedir, te ayudamos con los formularios y revisamos todo antes de que lo presentes.</p>
+      </div>
+      <div class="callout">
+        <h4>El seguro médico</h4>
+        <p>Varias residencias exigen un seguro de salud, y no vale cualquiera: cada trámite tiene sus requisitos. Te decimos exactamente qué debe cubrir tu póliza para que no te la rechacen.</p>
+        <p>¿Necesitas ayuda para contratarlo? <a href="tel:+34925960015" class="callout-link">Habla con Cautelia Seguros — 925 96 00 15</a></p>
+        <p class="fine-print">Cautelia Seguros tiene nuestra absoluta confianza: trabajamos con ellos desde que empezamos con extranjería. Es una correduría independiente, y la póliza se contrata directamente con ella, que es también quien te asesora sobre el seguro.</p>
+      </div>
+      <a href="mailto:info@serranopardogestores.com?subject=Consulta%20sobre%20extranjer%C3%ADa%20y%20nacionalidad" class="service-cta">
+        Pedir información
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- EMPRESAS -->
-<section class="service-detail alt" id="empresas">
+<!-- 02 · HOMOLOGACIONES -->
+<section class="service-detail alt" id="homologaciones">
   <div class="container service-detail-grid">
     <div>
       <div class="service-icon-badge">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="1.5" stroke="#6B3140" stroke-width="1.4"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" stroke="#6B3140" stroke-width="1.4"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" stroke="#6B3140" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round"/></svg>
       </div>
-      <div class="eyebrow"><span class="rule"></span>04 — EMPRESAS</div>
-      <h2>Seguridad jurídica para que tu negocio crezca</h2>
-      <p class="desc">Desde darte de alta como autónomo hasta la gestión continua de tu empresa. Un mismo interlocutor para todo lo legal y administrativo, para que tú te enfoques en crecer.</p>
+      <div class="eyebrow"><span class="rule"></span>02 — HOMOLOGACIONES</div>
+      <h2>Que tu título valga aquí lo que vale allá</h2>
+      <p class="desc">El título que traes de fuera no surte efecto en España hasta que se reconoce aquí, y no todos se reconocen por la misma vía.</p>
     </div>
-    <ul class="service-list">
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alta de autónomos y constitución de sociedades</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asesoría legal continua para pymes</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Gestión de trámites laborales y administrativos del negocio</li>
-      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#6B3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Acompañamiento en crecimiento y cumplimiento normativo</li>
-    </ul>
-    <div></div>
-    <a href="mailto:info@serranopardogestores.com?subject=Consulta%20para%20mi%20empresa" class="service-cta">
-      Consultar para tu empresa
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <div>
+      <p class="desc" style="max-width:none; margin-bottom:16px;">Según la titulación, el procedimiento es la homologación o la equivalencia, y en algunos casos la homologación se concede con la condición de superar antes una formación complementaria.</p>
+      <p class="desc" style="max-width:none; margin-bottom:16px;">Tramitamos homologaciones y equivalencias de títulos de bachiller, universitarios y de especialidad.</p>
+      <p class="desc" style="max-width:none; margin-bottom:24px;">Cada caso es un mundo. Estudiamos el tuyo, te decimos qué vía te corresponde y preparamos y presentamos el expediente.</p>
+      <a href="mailto:info@serranopardogestores.com?subject=Consulta%20sobre%20homologaciones" class="service-cta">
+        Pedir información
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- TRUST / PHOTO STRIP -->
-<section class="sec sec-alt">
-  <div class="container" style="display:flex; align-items:center; gap:48px; flex-wrap:wrap;">
-    <img src="images/servicios-photo.jpg" alt="Montserrat Serrano Pardo" style="width:220px; border:1px solid var(--gold); flex-shrink:0; display:block;">
-    <div style="flex:1; min-width:260px;">
-      <div class="eyebrow" style="color:var(--gold); display:flex; align-items:center; gap:12px; margin-bottom:14px;"><span class="rule" style="width:28px;height:1px;background:var(--gold);"></span>UN MISMO INTERLOCUTOR</div>
-      <h2 style="font-size:1.6rem; color:var(--navy-deep); margin:0 0 12px 0; font-family:'Newsreader',serif; font-weight:600;">Cada servicio, gestionado personalmente por Montserrat</h2>
-      <p style="color:var(--ink-soft); line-height:1.7; max-width:520px; margin:0;">Más de 30 años de experiencia legal respaldan cada trámite que gestionamos. No es un equipo rotativo — eres tú y ella, de principio a fin.</p>
+<!-- 03 · PENSIONES Y CONVENIOS INTERNACIONALES -->
+<section class="service-detail" id="pensiones">
+  <div class="container service-detail-grid">
+    <div>
+      <div class="service-icon-badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6B3140" stroke-width="1.4"/><path d="M12 7v5l3.5 2" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="eyebrow"><span class="rule"></span>03 — PENSIONES Y CONVENIOS INTERNACIONALES</div>
+      <h2>Que los años trabajados fuera cuenten aquí</h2>
+      <p class="desc">Si has cotizado en más de un país, esos periodos pueden sumarse. Los convenios internacionales de Seguridad Social existen precisamente para que los años trabajados fuera no se pierdan al calcular tu pensión.</p>
+    </div>
+    <div>
+      <p class="desc" style="max-width:none; margin-bottom:16px;">Tramitamos jubilación, invalidez y viudedad.</p>
+      <p class="desc" style="max-width:none; margin-bottom:24px;">Revisamos tu vida laboral completa, la de aquí y la de allá, y te decimos qué te corresponde antes de iniciar nada.</p>
+      <a href="mailto:info@serranopardogestores.com?subject=Consulta%20sobre%20pensiones%20y%20convenios%20internacionales" class="service-cta">
+        Pedir información
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · TRÁMITES CON LA ADMINISTRACIÓN -->
+<section class="service-detail alt" id="tramites">
+  <div class="container service-detail-grid">
+    <div>
+      <div class="service-icon-badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 10l8-6 8 6" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9h14v-9M9 19v-6h6v6" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="eyebrow"><span class="rule"></span>04 — TRÁMITES CON LA ADMINISTRACIÓN</div>
+      <h2>Los trámites que se acumulan</h2>
+      <p class="desc">Y para los que nunca encuentras el momento. Los hacemos nosotros, con tu autorización, y te avisamos cuando están resueltos.</p>
+    </div>
+    <div>
+      <div class="sub-group">
+        <h4>Registro Civil</h4>
+        <p>Inscripciones de nacimiento y de matrimonio. Certificados de nacimiento, matrimonio y defunción.</p>
+      </div>
+      <div class="sub-group">
+        <h4>Comunidad de Madrid</h4>
+        <p>Solicitud de determinación del grado de discapacidad. Solicitud de grado de dependencia. Registro de parejas de hecho.</p>
+      </div>
+      <div class="sub-group" style="margin-bottom:24px;">
+        <h4>Seguridad Social</h4>
+        <p>Solicitudes de prestaciones, entre ellas la incapacidad permanente. Reclamaciones previas y recursos posteriores.</p>
+      </div>
+      <a href="mailto:info@serranopardogestores.com?subject=Consulta%20sobre%20un%20tr%C3%A1mite%20con%20la%20Administraci%C3%B3n" class="service-cta">
+        Pedir información
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · CONTABLE, LABORAL Y FISCAL -->
+<section class="service-detail" id="contable">
+  <div class="container service-detail-grid">
+    <div>
+      <div class="service-icon-badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="1.5" stroke="#6B3140" stroke-width="1.4"/><path d="M8 8h8M8 12h3M13 12h3M8 16h3M13 16h3" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="eyebrow"><span class="rule"></span>05 — CONTABLE, LABORAL Y FISCAL</div>
+      <h2>Autónomos y pequeñas empresas</h2>
+      <p class="desc">Llevamos la gestión contable, laboral y fiscal de autónomos y pequeñas empresas. No nos limitamos a presentar los modelos: te orientamos desde el principio, antes de que las decisiones estén tomadas, que es cuando todavía se puede elegir.</p>
+    </div>
+    <div>
+      <div class="sub-group">
+        <h4>Si eres autónomo</h4>
+        <p>Contabilidad: registro de facturas emitidas y recibidas, ingresos, gastos y bancos, y los libros contables obligatorios. Impuestos trimestrales: IVA, IRPF, retenciones y alquileres (modelos 303, 130, 111 y 115), con sus resúmenes anuales. La declaración de la renta. Nóminas y seguros sociales cada mes, altas, bajas y variaciones en Seguridad Social, contratos y comunicaciones laborales. Asesoramiento fiscal y laboral durante todo el año, no sólo cuando toca presentar.</p>
+      </div>
+      <div class="sub-group">
+        <h4>Si tienes una empresa</h4>
+        <p>Contabilidad completa: facturas, bancos, amortizaciones, libros obligatorios y los balances e informes que necesites. Impuestos trimestrales y resúmenes anuales, incluidas las operaciones intracomunitarias. Cuentas anuales e Impuesto sobre Sociedades. Nóminas y seguros sociales cada mes, altas, bajas y variaciones en Seguridad Social, contratos y comunicaciones laborales. Asesoramiento fiscal y laboral durante todo el año.</p>
+      </div>
+      <div class="callout">
+        <p class="fine-print">Hay cosas que no entran en la cuota y se presupuestan aparte: inspecciones de Hacienda o de Seguridad Social, recursos, despidos y finiquitos, y cualquier procedimiento judicial. Te lo decimos antes, nunca después.</p>
+      </div>
+      <a href="mailto:info@serranopardogestores.com?subject=Consulta%20sobre%20gesti%C3%B3n%20contable%2C%20laboral%20y%20fiscal" class="service-cta">
+        Pedir información
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · DOCUMENTOS VENEZOLANOS -->
+<section class="service-detail alt" id="venezuela">
+  <div class="container service-detail-grid">
+    <div>
+      <div class="service-icon-badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" stroke="#6B3140" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#6B3140" stroke-width="1.4" stroke-linecap="round"/><circle cx="12" cy="15" r="2.6" stroke="#6B3140" stroke-width="1.4"/></svg>
+      </div>
+      <div class="eyebrow"><span class="rule"></span>06 — DOCUMENTOS VENEZOLANOS</div>
+      <h2>Con colegiación activa en Venezuela</h2>
+      <p class="desc">Redactamos y visamos documentos para Venezuela con colegiación activa en el Ilustre Colegio de Abogados de Caracas e inscripción en el IPSA, que es el número que exigen allá para el visado de documentos.</p>
+    </div>
+    <div>
+      <p class="desc" style="max-width:none; margin-bottom:16px;">Poderes, certificados y los documentos del día a día que te piden desde Venezuela.</p>
+      <p class="desc" style="max-width:none; margin-bottom:22px;">Cuéntanos qué necesitas y para qué lo necesitas. Con eso determinamos cuál es el documento idóneo en tu caso y lo redactamos.</p>
+      <div class="sub-group" style="margin-bottom:24px;">
+        <h4>Que el documento sirva allá</h4>
+        <p style="margin-bottom:10px;">Si estás en España y necesitas un documento que surta efectos en Venezuela, hay dos formas válidas y ambas las podemos gestionar en el despacho:</p>
+        <p style="margin-bottom:10px;"><b style="color:var(--navy-deep);">Ante el Consulado de Venezuela en España:</b> redactamos el documento, porque el consulado exige presentar el modelo redactado, y hacemos la solicitud por internet en tu nombre.</p>
+        <p style="margin-bottom:10px;"><b style="color:var(--navy-deep);">Ante notario español, con apostilla:</b> redactamos igualmente el documento, porque conviene llevar de entrada lo que van a requerir las autoridades venezolanas y no encontrarse el problema después.</p>
+        <p>Cuál de las dos vías te conviene, depende de tu caso. Te lo decimos nosotros.</p>
+      </div>
+      <a href="mailto:info@serranopardogestores.com?subject=Consulta%20sobre%20documentos%20venezolanos" class="service-cta">
+        Pedir información
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · ¿Y SI ME LO DENIEGAN? (CIERRE) -->
+<section class="denegacion" id="denegacion">
+  <div class="container">
+    <div class="eyebrow"><span class="rule"></span>¿Y SI ME LO DENIEGAN?</div>
+    <div class="denegacion-grid">
+      <div>
+        <p>Una denegación no siempre es el final. Puede haber un documento que sí existía y no se valoró, un requisito que se dio por incumplido sin serlo, o una resolución que no explica bien por qué dice que no.</p>
+        <p>Lo primero no es recurrir: es estudiar. Hay que leer la resolución entera y analizar con cuidado en qué motivos se apoya la denegación, porque ahí está escrito qué te deniegan, por qué, y qué puedes hacer a partir de ese momento.</p>
+        <p>No hay dos casos iguales, ni una regla fija que diga de antemano si un recurso es viable. Depende de tus circunstancias, de lo que se presentó en su día y de qué es exactamente lo que la Administración no ha dado por bueno. No podemos darte una respuesta sin haber revisado detalladamente todos los pormenores de tu caso.</p>
+        <p>Y hay que hacerlo pronto. La propia resolución te dice qué recurso cabe y en qué plazo, porque la Ley 39/2015 obliga a que lo indique, y ese plazo empieza a correr desde que te notifican. Cuando vence, la resolución queda firme aunque tuvieras razón.</p>
+      </div>
+      <div>
+        <p>Aquí el recurso lo firma la misma abogada que llevó el expediente, así que no tienes que empezar de nuevo ni contarle tu caso a nadie. Y si el trámite lo llevó otra persona, también lo estudiamos: tráenos la resolución.</p>
+        <p>Si vemos que recurrir no es lo que más te conviene, te lo decimos. A veces lo más rápido es volver a solicitar, bien hecho desde el principio. Otras veces es una cuestión táctica, no porque no hayas tenido razón la primera vez. Como siempre decimos, cada caso es un mundo, una circunstancia distinta, una motivación diferente. No recurrimos por recurrir.</p>
+        <div class="denegacion-quote">
+          <p>«Si el plan no funciona, cambia el plan pero no cambies la meta.»</p>
+        </div>
+        <a href="mailto:info@serranopardogestores.com?subject=Recurso%20contra%20una%20resoluci%C3%B3n%20denegatoria" class="service-cta">
+          Tráenos tu resolución
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -574,7 +737,7 @@
         <a class="brand" href="index.html" aria-label="Ir a la página principal">
           <img src="images/logo.png" alt="Serrano Pardo Gestores" class="brand-logo brand-logo-footer">
         </a>
-        <p>Asesoría legal y gestión administrativa con profesionalidad, empatía y resultados. Experiencia, compromiso, resultados.</p>
+        <p>Abogacía y gestión administrativa en Madrid. Extranjería, nacionalidad, homologaciones, pensiones y gestión contable, laboral y fiscal de autónomos y pequeñas empresas.</p>
         <div class="social-row">
           <a href="https://www.instagram.com/serranopardogestores" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="44" height="44" viewBox="0 0 44 44">

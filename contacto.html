@@ -476,7 +476,7 @@
   <div class="container">
     <div class="eyebrow"><span class="rule"></span>CONTACTO</div>
     <h1>Hablemos de tu situación</h1>
-    <p>Estamos para acompañarte — elige el canal que prefieras.</p>
+    <p>Estamos para acompañarte. Elige el canal que prefieras.</p>
   </div>
 </section>
 
@@ -486,62 +486,82 @@
     <div>
       <form class="contact-form" id="contactForm" action="mailto:info@serranopardogestores.com" method="post" enctype="text/plain">
         <div class="form-field">
-          <label for="cf-nombre">Nombre</label>
-          <input type="text" id="cf-nombre" name="Nombre" required>
+          <label for="cf-nombre">Nombre y apellidos</label>
+          <input type="text" id="cf-nombre" name="Nombre y apellidos" required>
         </div>
         <div class="form-field">
-          <label for="cf-canal">¿Cómo prefieres que te responda?</label>
-          <select id="cf-canal" name="Canal preferido" required>
+          <label for="cf-email">Correo electrónico</label>
+          <input type="email" id="cf-email" name="Correo electrónico" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-telefono">Teléfono — con WhatsApp, si lo tienes</label>
+          <input type="tel" id="cf-telefono" name="Teléfono" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-canal">¿Cómo prefieres que te respondamos?</label>
+          <select id="cf-canal" name="Canal preferido">
             <option value="">Elige una opción</option>
             <option value="WhatsApp">WhatsApp</option>
             <option value="Correo">Correo</option>
-            <option value="Llamada">Llamada</option>
           </select>
         </div>
         <div class="form-field">
-          <label for="cf-caso">Cuéntame brevemente tu caso</label>
-          <textarea id="cf-caso" name="Caso" required></textarea>
-          <p class="form-help">Un resumen breve es suficiente — no hace falta que incluyas documentos ni datos sensibles en este primer contacto.</p>
+          <label for="cf-caso">Cuéntanos qué necesitas</label>
+          <textarea id="cf-caso" name="Caso"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="cf-origen">¿Cómo nos conociste? <span style="font-weight:500; text-transform:none; letter-spacing:0; color:var(--ink-soft);">(opcional)</span></label>
+          <select id="cf-origen" name="Cómo nos conociste">
+            <option value="">Elige una opción</option>
+            <option value="Google">Google</option>
+            <option value="Recomendación de alguien">Recomendación de alguien</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="TikTok">TikTok</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Ya soy cliente">Ya soy cliente</option>
+            <option value="Otro">Otro</option>
+          </select>
         </div>
         <label class="form-consent">
           <input type="checkbox" required>
           <span>He leído y acepto la <a href="politica-de-privacidad.html">política de privacidad</a>.</span>
         </label>
-        <p class="form-response-note">Este formulario lo atiende el despacho directamente — te respondo yo personalmente en un máximo de dos días laborables.</p>
         <div>
-          <button type="submit" style="background:var(--navy-deep); color:var(--rosa); border:none; cursor:pointer; padding:15px 28px; font-weight:700; font-size:0.92rem; font-family:'Karla',sans-serif; border-radius:2px;">Enviar consulta</button>
+          <button type="submit" style="background:var(--navy-deep); color:var(--rosa); border:none; cursor:pointer; padding:15px 28px; font-weight:700; font-size:0.92rem; font-family:'Karla',sans-serif; border-radius:2px;">Pedir información</button>
         </div>
+        <p class="form-response-note">Te respondemos en un máximo de dos días laborables, y te decimos si es algo que llevamos, cómo lo haríamos y qué cuesta.</p>
       </form>
       <div class="price-note">
-        <p><b>La consulta cuesta 50 € la hora, IVA incluido.</b> En esa hora analizo tu caso concreto y te digo qué opciones tienes, qué documentación hace falta y qué es realista esperar. Se hace por videollamada o por teléfono, estés donde estés, y la atiendo yo siempre.</p>
-        <p>La consulta se paga aparte y no se descuenta del trámite: son dos cosas distintas. En esa hora te llevas el análisis de tu caso, me contrates después o no.</p>
-        <p>Si decides que lleve tu trámite, te doy el precio del servicio por escrito antes de empezar. Sin sorpresas.</p>
+        <p>Si lo que necesitas es que estudiemos tu situación y te digamos qué opciones tienes, eso es una asesoría.</p>
+        <p><b>La asesoría cuesta 50 € la hora, IVA incluido.</b> Puede ser presencial o a distancia, tú decides, y la atendemos nosotros. No se descuenta del encargo: son dos cosas distintas.</p>
       </div>
     </div>
     <div>
-      <div class="channels-head">Tres canales, cada uno con su función</div>
+      <div class="channels-head">Los canales</div>
       <div class="channel-item">
         <h3>WhatsApp de Sofía</h3>
         <a class="c-num" href="https://wa.me/34614737134" target="_blank" rel="noopener">614 73 71 34</a>
-        <p>Preguntas, documentación y citas, a cualquier hora.</p>
+        <p>Sofía es nuestra asistente virtual. Contesta a cualquier hora, resuelve las preguntas más frecuentes y te dice qué documentación necesitas. Cuando tu caso necesite una respuesta nuestra, te lleva al formulario.</p>
       </div>
       <div class="channel-item">
-        <h3>Teléfono del despacho</h3>
+        <h3>Teléfono, para pedir cita</h3>
         <a class="c-num" href="tel:+34919959747">91 995 97 47</a>
         <div class="channel-hours">
-          Lunes a jueves, de 9:00 a 14:30<br>
+          Lunes a jueves, de 9:00 a 16:30<br>
           Viernes, de 9:00 a 15:00<br>
           Sábados, domingos y festivos, cerrado
         </div>
+        <p style="margin-top:10px;">Si no estamos en la oficina, deja un mensaje con tu nombre y te escribimos para darte la cita. Si lo que quieres es información sobre un trámite, escríbenos por el formulario.</p>
       </div>
       <div class="channel-item">
-        <h3>Email</h3>
+        <h3>Correo</h3>
         <a class="c-num" href="mailto:info@serranopardogestores.com" style="font-size:0.95rem;">info@serranopardogestores.com</a>
       </div>
       <div class="channel-item" style="border-bottom:none;">
-        <h3>Despacho</h3>
-        <p style="color:var(--ink); margin:0;">Calle Mayor 50, 3.º A<br>28921 Alcorcón (Madrid)</p>
-        <p style="margin-top:8px;">Visitas con cita previa.</p>
+        <h3>Oficina</h3>
+        <p style="color:var(--ink); margin:0 0 10px 0;">Calle Mayor 50, 3.º A<br>28921 Alcorcón (Madrid)</p>
+        <p>No hace falta venir para que te llevemos el trámite: casi todo se hace de forma telemática y atendemos en toda España y desde fuera. Pero hay quien necesita ver en persona a quien se va a encargar de sus asuntos, o conocer a la abogada antes de decidir si le confía su caso. Si tú eres de esas personas, pide tu cita: con mucho gusto te atendemos aquí.</p>
       </div>
     </div>
   </div>
@@ -560,8 +580,6 @@
     </div>
   </div>
 </section>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer id="contacto">
@@ -571,7 +589,7 @@
         <a class="brand" href="index.html" aria-label="Ir a la página principal">
           <img src="images/logo.png" alt="Serrano Pardo Gestores" class="brand-logo brand-logo-footer">
         </a>
-        <p>Asesoría legal y gestión administrativa con profesionalidad, empatía y resultados. Experiencia, compromiso, resultados.</p>
+        <p>Abogacía y gestión administrativa en Madrid. Extranjería, nacionalidad, homologaciones, pensiones y gestión contable, laboral y fiscal de autónomos y pequeñas empresas.</p>
         <div class="social-row">
           <a href="https://www.instagram.com/serranopardogestores" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="44" height="44" viewBox="0 0 44 44">
@@ -664,13 +682,19 @@
     contactForm.addEventListener('submit', (e)=>{
       e.preventDefault();
       const nombre = document.getElementById('cf-nombre').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const telefono = document.getElementById('cf-telefono').value.trim();
       const canal = document.getElementById('cf-canal').value;
       const caso = document.getElementById('cf-caso').value.trim();
-      const subject = `Consulta desde la web — ${nombre}`;
+      const origen = document.getElementById('cf-origen').value;
+      const subject = `Pedir información desde la web — ${nombre}`;
       const body =
-        `Nombre: ${nombre}\n` +
-        `Canal preferido de respuesta: ${canal}\n\n` +
-        `Caso:\n${caso}`;
+        `Nombre y apellidos: ${nombre}\n` +
+        `Correo electrónico: ${email}\n` +
+        `Teléfono: ${telefono}\n` +
+        `Canal preferido de respuesta: ${canal}\n` +
+        `Cómo nos conoció: ${origen}\n\n` +
+        `Qué necesita:\n${caso}`;
       window.location.href = `mailto:info@serranopardogestores.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
