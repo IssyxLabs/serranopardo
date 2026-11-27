@@ -520,7 +520,7 @@
   <div class="container alta-wrap">
 
     <div class="alta-aviso" id="avisoDemo" hidden>
-      <b>Versión de prueba.</b> Usa solo datos ficticios. Los procedimientos y el aviso de privacidad son provisionales.
+      <b>Versión de prueba.</b> Usa solo datos ficticios. El aviso de privacidad es provisional.
     </div>
 
     <form id="formAlta" novalidate>
@@ -528,15 +528,16 @@
 
       <div class="alta-bloque">
         <h2><span class="num">01</span>Tu trámite</h2>
-        <p class="bloque-ayuda">Elige el procedimiento y el modelo de mandato que te he indicado al enviarte este enlace.</p>
+        <p class="bloque-ayuda">Cuéntame con tus palabras qué necesitas. Con eso elijo el procedimiento que te corresponde.</p>
         <div class="form-grid">
-          <div class="form-field c4">
-            <label for="f-proc">Procedimiento <span class="req">*</span></label>
-            <select id="f-proc" name="procedimiento_codigo" required></select>
+          <div class="form-field c6">
+            <label for="f-nec">¿Qué necesitas hacer? <span class="req">*</span></label>
+            <textarea id="f-nec" name="necesidad" required maxlength="1000" placeholder="Por ejemplo: quiero renovar mi permiso de residencia, que caduca en marzo."></textarea>
           </div>
-          <div class="form-field c2">
+          <div class="form-field c6">
             <label for="f-mandato">Modelo de mandato <span class="req">*</span></label>
             <select id="f-mandato" name="modelo_mandato" required></select>
+            <div class="form-help">Elige el que te he indicado al enviarte este enlace.</div>
           </div>
         </div>
       </div>
@@ -552,9 +553,14 @@
               <option value="Dª">Dª</option>
             </select>
           </div>
-          <div class="form-field c4">
-            <label for="f-nombre">Nombre <span class="req">*</span></label>
+          <div class="form-field c2">
+            <label for="f-nombre">Primer nombre <span class="req">*</span></label>
             <input id="f-nombre" name="nombre" required maxlength="60" autocomplete="given-name">
+          </div>
+          <div class="form-field c2">
+            <label for="f-nombre2">Segundo nombre</label>
+            <input id="f-nombre2" name="segundo_nombre" maxlength="60" autocomplete="additional-name">
+            <div class="form-help">Si tienes más de uno, escríbelos aquí.</div>
           </div>
           <div class="form-field c3">
             <label for="f-ap1">Primer apellido <span class="req">*</span></label>
@@ -788,17 +794,10 @@
     // Pegar aquí la URL del webhook "SP – Alta cliente" de Make.
     // Vacía = MODO DEMO: no se envía nada, solo se muestra la vista previa.
     WEBHOOK_URL: 'https://hook.us2.make.com/i8c6baf18v8z2nbkxg6ff7xmam7aq4up',
-    VERSION_FORMULARIO: '0.2-web',
+    VERSION_FORMULARIO: '0.3-web',
     // true = muestra el aviso de versión de prueba y el botón de datos ficticios.
     // Pasar a false solo cuando haya datos reales autorizados (contrato de encargo y Make en zona UE).
     PRUEBA: true,
-    // DATOS DE PRUEBA: Montserrat enviará la lista real. El precio NO viaja desde aquí:
-    // Make lo busca en la pestaña "Procedimientos" de la hoja de altas.
-    PROCEDIMIENTOS: [
-      { codigo: 'PRUEBA_A', texto: 'procedimiento de prueba A' },
-      { codigo: 'PRUEBA_B', texto: 'procedimiento de prueba B' },
-      { codigo: 'PRUEBA_C', texto: 'procedimiento de prueba C' }
-    ],
     // Montserrat indica al cliente qué modelo le corresponde. De momento solo existe uno.
     MODELOS_MANDATO: [
       { codigo: 'PROPIO', texto: 'En mi propio nombre', activo: true },
@@ -814,9 +813,6 @@
   const PROVINCIAS = ['Madrid','A Coruña','Álava','Albacete','Alicante','Almería','Asturias','Ávila','Badajoz','Barcelona','Bizkaia','Burgos','Cáceres','Cádiz','Cantabria','Castellón','Ceuta','Ciudad Real','Córdoba','Cuenca','Gipuzkoa','Girona','Granada','Guadalajara','Huelva','Huesca','Illes Balears','Jaén','La Rioja','Las Palmas','León','Lleida','Lugo','Málaga','Melilla','Murcia','Navarra','Ourense','Palencia','Pontevedra','Salamanca','Santa Cruz de Tenerife','Segovia','Sevilla','Soria','Tarragona','Teruel','Toledo','Valencia','Valladolid','Zamora','Zaragoza'];
 
   // --- Rellenar desplegables ---
-  const selProc = form.procedimiento_codigo;
-  selProc.innerHTML = '<option value="">Elige una opción</option>' +
-    CONFIG.PROCEDIMIENTOS.map(p => `<option value="${p.codigo}">${p.texto.charAt(0).toUpperCase() + p.texto.slice(1)}</option>`).join('');
   form.modelo_mandato.innerHTML = CONFIG.MODELOS_MANDATO
     .map(m => `<option value="${m.codigo}" ${m.activo ? '' : 'disabled'}>${m.texto}</option>`).join('');
   form.provincia.innerHTML = PROVINCIAS.map(p => `<option>${p}</option>`).join('');
@@ -883,7 +879,7 @@
     const errores = [];
     form.querySelectorAll('.invalido').forEach(el => el.classList.remove('invalido'));
     const marcar = (n, msg) => { const el = form.elements[n]; if (el) el.classList.add('invalido'); errores.push(msg); };
-    ['procedimiento_codigo','modelo_mandato','tratamiento','nombre','primer_apellido','nacionalidad','tipo_documento','numero_documento','via','numero','codigo_postal','municipio','provincia','telefono','correo','correo2']
+    ['necesidad','modelo_mandato','tratamiento','nombre','primer_apellido','nacionalidad','tipo_documento','numero_documento','via','numero','codigo_postal','municipio','provincia','telefono','correo','correo2']
       .forEach(n => { if (!f[n]) marcar(n, 'Faltan campos obligatorios.'); });
     if (f.numero_documento && f.tipo_documento && !documentoValido(f.tipo_documento, f.numero_documento)) marcar('numero_documento', `El número de ${f.tipo_documento} no es válido.`);
     if (f.codigo_postal && !/^(0[1-9]|[1-4]\d|5[0-2])\d{3}$/.test(f.codigo_postal)) marcar('codigo_postal', 'El código postal no es válido.');
@@ -902,16 +898,15 @@
   }
 
   function construirPayload(f) {
-    const proc = CONFIG.PROCEDIMIENTOS.find(p => p.codigo === f.procedimiento_codigo);
     return {
       referencia: referencia(),
       enviado_en: new Date().toISOString(),
       version_formulario: CONFIG.VERSION_FORMULARIO,
-      procedimiento_codigo: f.procedimiento_codigo,
-      procedimiento_texto: proc ? proc.texto : '',
+      necesidad: f.necesidad,
       modelo_mandato: f.modelo_mandato,
       tratamiento: f.tratamiento,
       nombre: f.nombre,
+      segundo_nombre: f.segundo_nombre || '',
       primer_apellido: f.primer_apellido,
       segundo_apellido: f.segundo_apellido || '',
       nacionalidad: f.nacionalidad,
@@ -934,7 +929,7 @@
 
   function previaHoja(p) {
     const ap = [p.primer_apellido, p.segundo_apellido].filter(Boolean).join(' ');
-    return `De una parte, <strong>${esc(p.tratamiento)} ${esc(p.nombre)} ${esc(ap)}</strong>, mayor de edad, nacional de ${esc(p.nacionalidad)}, con ${esc(p.tipo_documento)} ${esc(p.numero_documento)}, con domicilio a estos efectos en ${esc(p.direccion_completa)}, número de teléfono ${esc(p.telefono)}, y correo electrónico ${esc(p.correo)}. En lo sucesivo El Cliente.`;
+    return `De una parte, <strong>${esc(p.tratamiento)} ${esc([p.nombre, p.segundo_nombre].filter(Boolean).join(" "))} ${esc(ap)}</strong>, mayor de edad, nacional de ${esc(p.nacionalidad)}, con ${esc(p.tipo_documento)} ${esc(p.numero_documento)}, con domicilio a estos efectos en ${esc(p.direccion_completa)}, número de teléfono ${esc(p.telefono)}, y correo electrónico ${esc(p.correo)}. En lo sucesivo El Cliente.`;
   }
   function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
@@ -992,7 +987,7 @@
 
   // Datos claramente ficticios para la demo (DNI de ejemplo con letra válida).
   document.getElementById('btnEjemplo').addEventListener('click', () => {
-    const ej = { procedimiento_codigo: 'PRUEBA_A', modelo_mandato: 'PROPIO', tratamiento: 'Dª', nombre: 'Prueba', primer_apellido: 'Ficticia', segundo_apellido: 'Demo',
+    const ej = { necesidad: 'Prueba ficticia: quiero renovar mi permiso de residencia.', modelo_mandato: 'PROPIO', tratamiento: 'Dª', nombre: 'Prueba', segundo_nombre: 'María', primer_apellido: 'Ficticia', segundo_apellido: 'Demo',
       nacionalidad: 'Colombia', tipo_documento: 'NIE', numero_documento: 'X1234567L', tipo_via: 'Calle', via: 'de Ejemplo', numero: '1', piso_puerta: '1º A',
       codigo_postal: '28921', municipio: 'Alcorcón', provincia: 'Madrid', telefono: '600000000', correo: 'prueba@example.com', correo2: 'prueba@example.com' };
     Object.entries(ej).forEach(([k, v]) => { if (form.elements[k]) form.elements[k].value = v; });
