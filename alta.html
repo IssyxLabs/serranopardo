@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alta de cliente — Serrano Pardo Gestores</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#6B3140;
+    --navy-mid:#57272F;
+    --navy-line: rgba(255,255,255,0.14);
+    --gold:#6B3140;
+    --gold-bright:#8C4A57;
+    --rosa:#F8EEEC;
+    --rosa-hondo:#F1DFDA;
+    --cream:#FCF9F8;
+    --paper:#F8EEEC;
+    --ink:#2A2226;
+    --ink-soft:#8C6F6A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Karla',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Newsreader',serif;}
+  .script{font-family:'Newsreader',serif; font-style:italic; font-weight:500;}
+  .eyebrow{
+    font-family:'Karla',sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .container{max-width:1180px; margin:0 auto; padding:0 28px;}
+  a{text-decoration:none;color:inherit;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy-deep);
+    border-bottom:1px solid var(--navy-line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    height:78px;
+    gap:20px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-logo{height:40px; width:auto; display:block;}
+  .brand-logo-footer{height:34px;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-right{display:flex; align-items:center; gap:30px;}
+  .nav-links a{
+    color:#E9D9D5; font-size:0.85rem; font-weight:500; letter-spacing:0.02em;
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--rosa);}
+  .nav-toggle{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0;
+  }
+  .nav-toggle span{display:block; width:22px; height:2px; background:#EAD9D5; transition:transform .25s ease, opacity .2s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nav-cta{
+    background:#25D366; color:#0B2B1C!important;
+    padding:9px 18px; font-size:0.8rem; font-weight:700;
+    letter-spacing:0.02em;
+    border-radius:999px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .nav-cta svg{flex-shrink:0; width:17px; height:17px;}
+  .nav-cta:hover{background:#1FBE5A;}
+  .nav-phone{
+    display:flex; align-items:center; justify-content:center;
+    width:34px; height:34px;
+    color:#EAD9D5;
+  }
+  .nav-phone svg{flex-shrink:0;}
+  .nav-phone:hover{color:var(--rosa);}
+  @media(max-width:860px){
+    .nav-toggle{display:flex;}
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; align-items:stretch; gap:0;
+      background:var(--navy-deep);
+      border-top:1px solid var(--navy-line);
+      max-height:0; overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:420px;}
+    .nav-links a{padding:16px 28px; border-bottom:1px solid var(--navy-line);}
+  }
+  @media(max-width:480px){
+    .container{padding:0 24px;}
+    .nav-inner{height:66px;}
+    .brand-logo{height:26px;}
+    .nav-right{gap:18px;}
+    .nav-cta{padding:9px 14px; gap:6px;}
+    .nav-cta svg{width:18px; height:18px;}
+  }
+  @media(max-width:480px){
+    .nav-cta .cta-label{display:none;}
+    .nav-cta{padding:9px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--navy-deep);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    align-items:stretch;
+    height:640px;
+  }
+  .hero-copy{
+    display:flex; flex-direction:column; justify-content:center;
+    padding:70px 0 70px 0;
+    position:relative; z-index:2;
+  }
+  .hero-eyebrow{color:var(--rosa); margin-bottom:22px; display:flex; align-items:center; gap:14px;}
+  .hero-eyebrow .rule{width:34px;height:1px;background:var(--rosa-hondo);}
+  .hero h1{
+    color:var(--paper);
+    font-size:3.05rem;
+    line-height:1.12;
+    font-weight:600;
+    margin:0 0 6px 0;
+  }
+  .hero h1 .script{
+    color:var(--rosa);
+    font-size:1.5em;
+    display:block;
+    line-height:1;
+    margin-top:2px;
+  }
+  .hero p.lede{
+    color:#D9B8B3;
+    font-size:1.08rem;
+    line-height:1.65;
+    max-width:460px;
+    margin:26px 0 36px 0;
+  }
+  .hero p.lede b{color:var(--rosa); font-weight:600;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--rosa); color:var(--navy-deep);
+    padding:15px 28px; font-weight:700; font-size:0.92rem;
+    display:inline-flex; align-items:center; gap:10px;
+    border-radius:2px; transition:all .2s;
+  }
+  .btn-primary:hover{background:var(--rosa-hondo); transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid var(--navy-line); color:#EAD9D5;
+    padding:15px 26px; font-weight:600; font-size:0.92rem;
+    border-radius:2px; transition:all .2s;
+  }
+  .btn-ghost:hover{border-color:var(--rosa-hondo); color:var(--rosa);}
+
+  .hero-photo-wrap{
+    position:relative;
+    height:100%;
+    overflow:hidden;
+  }
+  .hero-photo-wrap img{
+    width:100%; height:100%; object-fit:cover;
+    object-position:center 15%;
+    filter: saturate(0.92) contrast(1.02);
+  }
+  .hero-photo-fade{
+    position:absolute; inset:0;
+    background:linear-gradient(270deg, var(--navy-deep) 0%, rgba(107,49,64,0.5) 14%, rgba(107,49,64,0) 38%);
+  }
+  .hero-quote{
+    margin:38px 0 0 0;
+    padding-left:22px;
+    border-left:2px solid var(--rosa-hondo);
+    max-width:420px;
+  }
+  .hero-quote p{
+    color:var(--paper); font-family:'Newsreader',serif; font-style:italic;
+    font-size:1.15rem; line-height:1.5; margin:0 0 10px 0;
+  }
+  .hero-quote cite{color:var(--rosa); font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; font-style:normal;}
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr; height:auto;}
+    .hero-copy{order:1;}
+    .hero-photo-wrap{order:2; height:380px;}
+    .hero h1{font-size:2.2rem;}
+    .hero-quote{margin-top:30px; margin-bottom:10px;}
+  }
+  @media(max-width:900px) and (orientation:landscape){
+    .hero-grid{grid-template-columns:0.9fr 1.1fr;}
+    .hero-copy{order:0; padding:36px 0;}
+    .hero-photo-wrap{order:0; height:auto; min-height:340px;}
+    .hero h1{font-size:1.9rem;}
+    .hero-quote{margin-top:18px;}
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{
+    background:var(--paper);
+    border-bottom:1px solid #F1DFDA;
+  }
+  .trust-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 0; flex-wrap:wrap; gap:18px;
+  }
+  .trust-item{display:flex; align-items:center; gap:10px; color:var(--ink-soft); font-size:0.86rem; font-weight:500;}
+  .trust-item svg{flex-shrink:0;}
+  .trust-item b{color:var(--ink); font-weight:700;}
+  @media(max-width:560px){
+    .trust-inner{justify-content:flex-start; gap:14px 22px; padding:18px 0;}
+    .trust-item{font-size:0.8rem;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec{padding:96px 0;}
+  .sec-alt{background:var(--paper);}
+  .sec-head{max-width:620px; margin-bottom:56px;}
+  .sec-head .eyebrow{color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:12px;}
+  .sec-head .eyebrow .rule{width:28px;height:1px;background:var(--gold);}
+  .sec-head h2{font-size:2.3rem; color:var(--navy-deep); font-weight:600; line-height:1.2; margin:0;}
+  .sec-head p{color:var(--ink-soft); margin-top:16px; line-height:1.6; font-size:1.02rem;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:#F1DFDA; border:1px solid #F1DFDA;
+  }
+  .service-card{
+    background:var(--paper);
+    padding:38px 30px;
+    transition:background .25s;
+  }
+  .service-card:hover{background:var(--navy-deep);}
+  .service-card:hover .svc-title, .service-card:hover .svc-desc{color:var(--paper);}
+  .service-card:hover .svc-desc{color:#D9B8B3;}
+  .service-card:hover .svc-num{color:var(--rosa);}
+  .svc-num{
+    font-family:'Newsreader',serif; font-style:italic;
+    color:var(--gold); font-size:1rem; display:block; margin-bottom:22px;
+  }
+  .svc-title{
+    font-family:'Newsreader',serif; font-weight:600; font-size:1.18rem;
+    color:var(--navy-deep); margin:0 0 10px 0; transition:color .25s;
+  }
+  .svc-desc{color:var(--ink-soft); font-size:0.9rem; line-height:1.55; transition:color .25s;}
+  @media(max-width:900px){ .services-grid{grid-template-columns:1fr 1fr;} }
+  @media(max-width:560px){ .services-grid{grid-template-columns:1fr;} }
+
+  /* ---------- PROCESS ---------- */
+  .process{background:var(--navy-deep); padding:96px 0;}
+  .process .sec-head h2, .process .eyebrow{color:var(--paper);}
+  .process .sec-head p{color:#D9B8B3;}
+  .process .eyebrow{color:var(--rosa);}
+  .process-row{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:0;
+    position:relative;
+  }
+  .process-row::before{
+    content:'';
+    position:absolute; top:26px; left:5%; right:5%; height:1px;
+    background:var(--navy-line);
+  }
+  .p-step{position:relative; padding:0 18px 0 0;}
+  .p-num{
+    width:52px;height:52px; border-radius:50%;
+    background:var(--navy-deep); border:1px solid var(--rosa-hondo);
+    color:var(--rosa); font-family:'Newsreader',serif; font-style:italic;
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem;
+    margin-bottom:22px; position:relative; z-index:2;
+  }
+  .p-step h3{color:var(--paper); font-size:1.02rem; margin:0 0 8px 0; font-weight:600;}
+  .p-step p{color:#C79992; font-size:0.85rem; line-height:1.5; margin:0;}
+  @media(max-width:900px){
+    .process-row{grid-template-columns:1fr 1fr; gap:34px;}
+    .process-row::before{display:none;}
+  }
+  @media(max-width:560px){ .process-row{grid-template-columns:1fr;} }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-wrap{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
+  .testi-card{
+    background:var(--cream); border-top:2px solid var(--gold);
+    padding:34px 30px;
+  }
+  .testi-stars{display:flex; gap:3px; margin-bottom:14px;}
+  .testi-quote{font-family:'Newsreader',serif; font-style:italic; font-size:2rem; color:var(--gold); line-height:1; margin-bottom:12px;}
+  .testi-card p.body{color:var(--ink); font-size:0.95rem; line-height:1.6; margin:0 0 22px 0;}
+  .testi-person{display:flex; align-items:center; gap:12px;}
+  .testi-avatar{
+    width:42px; height:42px; border-radius:50%;
+    background:var(--navy-deep); color:var(--rosa);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Newsreader',serif; font-weight:600; font-size:1.05rem;
+    flex-shrink:0;
+  }
+  .testi-name{font-weight:700; font-size:0.88rem; color:var(--navy-deep);}
+  .testi-role{color:var(--ink-soft); font-size:0.8rem;}
+  @media(max-width:900px){ .testi-wrap{grid-template-columns:1fr;} }
+
+  /* ---------- SOFIA / WHATSAPP CTA ---------- */
+  .sofia{
+    background:var(--rosa);
+    padding:70px 0;
+  }
+  .sofia-inner{
+    display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
+  }
+  .sofia-copy h2{color:var(--navy-deep); font-size:1.9rem; margin:0 0 12px 0; font-weight:600;}
+  .sofia-copy p{color:#2A2226; max-width:480px; line-height:1.6; margin:0;}
+  .sofia-btn{
+    background:#25D366; color:#0B2B1C;
+    padding:17px 32px; font-weight:700; font-size:0.95rem;
+    display:inline-flex; align-items:center; gap:12px;
+    border-radius:999px;
+    box-shadow:0 4px 16px rgba(11,20,20,0.18);
+  }
+  .sofia-btn:hover{background:#1FBE5A; transform:translateY(-1px);}
+
+  /* ---------- BLOG ---------- */
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .blog-card{background:var(--paper); border:1px solid #F1DFDA;}
+  .blog-tag{
+    color:var(--gold); font-size:0.72rem; font-weight:700; letter-spacing:0.1em;
+    text-transform:uppercase; padding:24px 26px 0 26px; display:block;
+  }
+  .blog-card h3{font-size:1.08rem; color:var(--navy-deep); padding:10px 26px 0 26px; margin:0; line-height:1.35; font-weight:600;}
+  .blog-card p{color:var(--ink-soft); font-size:0.87rem; padding:12px 26px 26px 26px; margin:0; line-height:1.55;}
+  @media(max-width:900px){ .blog-grid{grid-template-columns:1fr;} }
+
+  /* ---------- ENLACES OFICIALES ---------- */
+  .official-links{padding:52px 0; background:var(--paper); border-top:1px solid #F1DFDA;}
+  .official-links .label{
+    text-align:center; color:var(--ink-soft); font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; margin:0 0 30px 0; font-weight:600;
+  }
+  .official-links-row{display:flex; justify-content:center; align-items:center; gap:52px; flex-wrap:wrap;}
+  .official-links-row a{display:block; filter:grayscale(100%); opacity:0.65; transition:all .25s;}
+  .official-links-row a:hover{filter:grayscale(0%); opacity:1;}
+  .official-links-row img{height:84px; width:auto; display:block;}
+  @media(max-width:560px){
+    .official-links-row{gap:30px;}
+    .official-links-row img{height:68px;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-deep); padding:70px 0 30px 0;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid var(--navy-line);}
+  .footer-brand p{color:#C79992; font-size:0.88rem; line-height:1.6; max-width:280px; margin-top:16px;}
+  .footer-col h4{color:var(--rosa); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 18px 0;}
+  .footer-col a, .footer-col p{color:#D9B8B3; font-size:0.88rem; display:block; margin-bottom:10px; line-height:1.5;}
+  .footer-col a:hover{color:var(--rosa);}
+  .social-row{display:flex; gap:14px; margin-top:20px;}
+  .social-row a{
+    width:44px;height:44px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; margin:0;
+    transition:transform .2s;
+  }
+  .social-row a:hover{transform:translateY(-2px);}
+  .footer-bottom{display:flex; justify-content:space-between; padding-top:24px; flex-wrap:wrap; gap:10px;}
+  .footer-bottom p{color:#9C7A75; font-size:0.8rem; margin:0;}
+  @media(max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr; gap:32px;} }
+  @media(max-width:560px){ .footer-grid{grid-template-columns:1fr;} }
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- LEGAL CONTENT PAGES ---------- */
+  .legal-hero{background:var(--navy-deep); padding:56px 0 44px 0;}
+  .legal-hero .eyebrow{color:var(--gold-bright); margin-bottom:14px; display:flex; align-items:center; gap:12px;}
+  .legal-hero .eyebrow .rule{width:28px;height:1px;background:var(--gold);}
+  .legal-hero h1{color:var(--paper); font-size:2rem; font-weight:600; margin:0;}
+  .legal-updated{color:#C79992; font-size:0.82rem; margin-top:10px;}
+  .legal-body{padding:64px 0 80px 0;}
+  .legal-content{max-width:760px; margin:0 auto;}
+  .legal-content h2{
+    font-family:'Newsreader',serif; font-weight:600; color:var(--navy-deep);
+    font-size:1.3rem; margin:40px 0 14px 0;
+  }
+  .legal-content h2:first-child{margin-top:0;}
+  .legal-content p{color:var(--ink); font-size:0.98rem; line-height:1.75; margin:0 0 16px 0;}
+  .legal-content ul{margin:0 0 16px 0; padding-left:22px;}
+  .legal-content li{color:var(--ink); font-size:0.98rem; line-height:1.75; margin-bottom:8px;}
+  .legal-content a{color:var(--gold); text-decoration:underline; text-underline-offset:2px;}
+  .legal-content strong{color:var(--navy-deep);}
+  .legal-note{
+    background:var(--cream); border-left:2px solid var(--gold);
+    padding:18px 22px; margin:32px 0; font-size:0.9rem; color:var(--ink-soft); line-height:1.6;
+  }
+  .legal-table{width:100%; border-collapse:collapse; margin:20px 0 28px 0; font-size:0.9rem;}
+  .legal-table th, .legal-table td{border:1px solid #F1DFDA; padding:10px 14px; text-align:left; color:var(--ink);}
+  .legal-table th{background:var(--cream); color:var(--navy-deep); font-weight:700;}
+
+
+  /* ---------- CONTACT FORM + CHANNELS ---------- */
+  .contact-grid2{display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:start;}
+  .contact-form{display:flex; flex-direction:column; gap:18px;}
+  .form-field label{display:block; font-size:0.85rem; font-weight:700; color:var(--navy-deep); margin-bottom:6px;}
+  .form-field input, .form-field select, .form-field textarea{
+    width:100%; padding:12px 14px; border:1px solid #F1DFDA; background:var(--paper); color:var(--ink);
+    font-family:'Karla',sans-serif; font-size:0.95rem; border-radius:2px;
+  }
+  .form-field textarea{min-height:110px; resize:vertical;}
+  .form-help{font-size:0.82rem; color:var(--ink-soft); margin-top:6px;}
+  .form-consent{display:flex; align-items:flex-start; gap:10px; font-size:0.85rem; color:var(--ink-soft); line-height:1.5;}
+  .form-consent input{margin-top:3px; flex-shrink:0;}
+  .form-consent a{color:var(--navy-deep); text-decoration:underline; text-underline-offset:2px;}
+  .form-response-note{font-size:0.88rem; font-weight:700; color:var(--navy-deep); margin:0;}
+  .price-note{background:var(--rosa); border-left:3px solid var(--navy-deep); padding:22px 24px; margin-top:8px; font-size:0.9rem; line-height:1.6; color:var(--ink);}
+  .price-note p{margin:0 0 12px 0;}
+  .price-note p:last-child{margin-bottom:0;}
+  .price-note b{color:var(--navy-deep);}
+
+  .channels-head{font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:var(--gold); margin-bottom:20px;}
+  .channel-item{padding:22px 0; border-bottom:1px solid #F1DFDA;}
+  .channel-item:first-child{padding-top:0;}
+  .channel-item h3{font-family:'Newsreader',serif; font-weight:600; font-size:1.05rem; color:var(--navy-deep); margin:0 0 6px 0;}
+  .channel-item p{color:var(--ink-soft); font-size:0.92rem; line-height:1.5; margin:0 0 4px 0;}
+  .channel-item a.c-num{color:var(--navy-deep); font-weight:700; font-size:1.02rem; display:inline-block; margin-top:2px;}
+  .channel-hours{font-size:0.85rem; color:var(--ink-soft); margin-top:8px; line-height:1.6;}
+  @media(max-width:900px){ .contact-grid2{grid-template-columns:1fr; gap:40px;} }
+
+  /* ---------- MAP ---------- */
+  .map-wrap{border:1px solid #F1DFDA; overflow:hidden; height:420px;}
+  .map-wrap iframe{width:100%; height:100%; border:0; display:block;}
+
+  /* ---------- ALTA DE CLIENTE ---------- */
+  .alta-wrap{max-width:820px; margin:0 auto;}
+  .alta-aviso{background:#FFF6E0; border-left:3px solid #B7791F; color:#5C3D0A; padding:14px 18px; font-size:0.88rem; line-height:1.55; margin-bottom:32px;}
+  .alta-intro{color:var(--ink-soft); font-size:1rem; line-height:1.65; margin:0 0 36px 0;}
+  .alta-intro .req, .form-field .req{color:var(--navy-deep);}
+  .alta-bloque{background:#fff; border:1px solid var(--rosa-hondo); padding:30px 32px; margin-bottom:22px;}
+  .alta-bloque h2{font-family:'Newsreader',serif; font-weight:600; color:var(--navy-deep); font-size:1.35rem; margin:0 0 6px 0; display:flex; align-items:baseline; gap:12px;}
+  .alta-bloque h2 .num{font-family:'Karla',sans-serif; font-size:0.72rem; letter-spacing:0.18em; color:var(--gold-bright); font-weight:700;}
+  .alta-bloque .bloque-ayuda{color:var(--ink-soft); font-size:0.88rem; margin:0 0 22px 0; line-height:1.5;}
+  .form-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:18px 20px;}
+  .alta-bloque h2 + .form-grid{margin-top:20px;}
+  .c2{grid-column:span 2;} .c3{grid-column:span 3;} .c4{grid-column:span 4;} .c6{grid-column:span 6;}
+  .form-field input, .form-field select{font-size:16px;}
+  .form-field input.mayus{text-transform:uppercase;}
+  .form-field .invalido{border-color:#A61B1B !important; background:#FDF1F1;}
+  .oculto-bot{position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden;}
+  .alta-error{background:#FDF1F1; border-left:3px solid #A61B1B; color:#7A1414; padding:14px 18px; font-size:0.9rem; line-height:1.55; margin:0 0 20px 0;}
+  .alta-acciones{display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between; margin-top:8px;}
+  .btn-marca{background:var(--navy-deep); color:var(--rosa); border:none; cursor:pointer; padding:15px 30px; font-weight:700; font-size:0.95rem; font-family:'Karla',sans-serif; border-radius:2px;}
+  .btn-marca:hover{background:var(--navy-mid);}
+  .btn-marca:disabled{opacity:0.6; cursor:default;}
+  .btn-enlace{background:none; border:none; padding:0; color:var(--navy-deep); text-decoration:underline; text-underline-offset:2px; cursor:pointer; font-family:'Karla',sans-serif; font-size:0.88rem;}
+  .alta-resultado{scroll-margin-top:110px; background:#fff; border:1px solid var(--rosa-hondo); border-top:4px solid var(--navy-deep); padding:34px 32px;}
+  .alta-resultado h2{font-family:'Newsreader',serif; font-weight:600; color:var(--navy-deep); font-size:1.6rem; margin:0 0 12px 0;}
+  .alta-resultado p{line-height:1.65; margin:0 0 14px 0;}
+  .alta-resultado .ref{font-weight:700; color:var(--navy-deep);}
+  .previa-hoja{border-left:3px solid #C79992; background:var(--rosa); padding:14px 18px; font-size:0.9rem; line-height:1.6;}
+  .previa-json{background:var(--ink); color:#F1DFDA; font-size:0.78rem; padding:16px; overflow-x:auto; white-space:pre;}
+  [hidden]{display:none !important;}
+  @media(max-width:700px){
+    .alta-bloque{padding:24px 18px;}
+    .form-grid{grid-template-columns:1fr;}
+    .c2,.c3,.c4,.c6{grid-column:span 1;}
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Ir a la página principal">
+      <img src="images/logo.png" alt="Serrano Pardo Gestores" class="brand-logo">
+    </a>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="servicios.html">Servicios</a>
+        <a href="sobre-mi.html">Sobre Mí</a>
+        <a href="index.html#proceso">Cómo trabajamos</a>
+        <a href="index.html#opiniones">Opiniones</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <a class="nav-phone" href="tel:+34919959747" aria-label="Llamar al despacho: 91 995 97 47" title="91 995 97 47">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="nav-cta" href="https://wa.me/34614737134" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M17.1 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z" fill="#25D366"/><path d="M12 4a8 8 0 0 0-6.9 12L4 20l4.1-1.1A8 8 0 1 0 12 4z" fill="none" stroke="#25D366" stroke-width="1.3"/></svg>
+        <span class="cta-label">Habla con Sofía</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow"><span class="rule"></span>ALTA DE CLIENTE</div>
+    <h1>Tus datos para empezar</h1>
+    <p>Con estos datos preparo tu hoja de encargo y tu mandato. Te los envío por correo para que los revises antes de firmar.</p>
+  </div>
+</section>
+
+<!-- FORMULARIO DE ALTA -->
+<section class="sec sec-alt">
+  <div class="container alta-wrap">
+
+    <div class="alta-aviso" id="avisoDemo" hidden>
+      <b>Versión de prueba.</b> Usa solo datos ficticios. Los procedimientos y el aviso de privacidad son provisionales.
+    </div>
+
+    <form id="formAlta" novalidate>
+      <p class="alta-intro">Los campos marcados con <span class="req">*</span> son obligatorios. Escribe tus datos tal y como aparecen en tu documento de identidad.</p>
+
+      <div class="alta-bloque">
+        <h2><span class="num">01</span>Tu trámite</h2>
+        <p class="bloque-ayuda">Elige el procedimiento y el modelo de mandato que te he indicado al enviarte este enlace.</p>
+        <div class="form-grid">
+          <div class="form-field c4">
+            <label for="f-proc">Procedimiento <span class="req">*</span></label>
+            <select id="f-proc" name="procedimiento_codigo" required></select>
+          </div>
+          <div class="form-field c2">
+            <label for="f-mandato">Modelo de mandato <span class="req">*</span></label>
+            <select id="f-mandato" name="modelo_mandato" required></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="alta-bloque">
+        <h2><span class="num">02</span>Datos personales</h2>
+        <div class="form-grid">
+          <div class="form-field c2">
+            <label for="f-trat">Tratamiento <span class="req">*</span></label>
+            <select id="f-trat" name="tratamiento" required>
+              <option value="">Elige una opción</option>
+              <option value="D.">D.</option>
+              <option value="Dª">Dª</option>
+            </select>
+          </div>
+          <div class="form-field c4">
+            <label for="f-nombre">Nombre <span class="req">*</span></label>
+            <input id="f-nombre" name="nombre" required maxlength="60" autocomplete="given-name">
+          </div>
+          <div class="form-field c3">
+            <label for="f-ap1">Primer apellido <span class="req">*</span></label>
+            <input id="f-ap1" name="primer_apellido" required maxlength="60" autocomplete="family-name">
+          </div>
+          <div class="form-field c3">
+            <label for="f-ap2">Segundo apellido</label>
+            <input id="f-ap2" name="segundo_apellido" maxlength="60">
+            <div class="form-help">Déjalo en blanco si no tienes.</div>
+          </div>
+          <div class="form-field c6">
+            <label for="f-nac">Nacionalidad (país) <span class="req">*</span></label>
+            <input id="f-nac" name="nacionalidad" required maxlength="60" list="paises" placeholder="Por ejemplo: Colombia">
+            <datalist id="paises">
+              <option value="España"><option value="Argentina"><option value="Bolivia"><option value="Brasil"><option value="Chile"><option value="Colombia"><option value="Cuba"><option value="Ecuador"><option value="El Salvador"><option value="Guatemala"><option value="Honduras"><option value="Marruecos"><option value="México"><option value="Nicaragua"><option value="Paraguay"><option value="Perú"><option value="República Dominicana"><option value="Rumanía"><option value="Ucrania"><option value="Uruguay"><option value="Venezuela"><option value="China"><option value="Filipinas"><option value="India"><option value="Pakistán"><option value="Senegal">
+            </datalist>
+          </div>
+          <div class="form-field c2">
+            <label for="f-tdoc">Tipo de documento <span class="req">*</span></label>
+            <select id="f-tdoc" name="tipo_documento" required>
+              <option value="">Elige una opción</option>
+              <option value="DNI">DNI</option>
+              <option value="NIE">NIE</option>
+              <option value="Pasaporte">Pasaporte</option>
+              <option value="CIF">CIF</option>
+            </select>
+          </div>
+          <div class="form-field c4">
+            <label for="f-ndoc">Número de documento <span class="req">*</span></label>
+            <input id="f-ndoc" name="numero_documento" required maxlength="20" autocomplete="off" class="mayus">
+            <div class="form-help" id="ayudaDoc"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alta-bloque">
+        <h2><span class="num">03</span>Domicilio para notificaciones</h2>
+        <div class="form-grid">
+          <div class="form-field c2">
+            <label for="f-tvia">Tipo de vía <span class="req">*</span></label>
+            <select id="f-tvia" name="tipo_via" required>
+              <option value="Calle">Calle</option>
+              <option value="Avenida">Avenida</option>
+              <option value="Plaza">Plaza</option>
+              <option value="Paseo">Paseo</option>
+              <option value="Camino">Camino</option>
+              <option value="Carretera">Carretera</option>
+              <option value="Ronda">Ronda</option>
+              <option value="Travesía">Travesía</option>
+              <option value="Urbanización">Urbanización</option>
+            </select>
+          </div>
+          <div class="form-field c4">
+            <label for="f-via">Nombre de la vía <span class="req">*</span></label>
+            <input id="f-via" name="via" required maxlength="100" autocomplete="address-line1">
+          </div>
+          <div class="form-field c2">
+            <label for="f-num">Número <span class="req">*</span></label>
+            <input id="f-num" name="numero" required maxlength="10" placeholder="12 o s/n">
+          </div>
+          <div class="form-field c4">
+            <label for="f-piso">Piso, puerta, escalera…</label>
+            <input id="f-piso" name="piso_puerta" maxlength="40" placeholder="3.º B" autocomplete="address-line2">
+          </div>
+          <div class="form-field c2">
+            <label for="f-cp">Código postal <span class="req">*</span></label>
+            <input id="f-cp" name="codigo_postal" required inputmode="numeric" maxlength="5" autocomplete="postal-code">
+          </div>
+          <div class="form-field c2">
+            <label for="f-mun">Municipio <span class="req">*</span></label>
+            <input id="f-mun" name="municipio" required maxlength="60" autocomplete="address-level2">
+          </div>
+          <div class="form-field c2">
+            <label for="f-prov">Provincia <span class="req">*</span></label>
+            <select id="f-prov" name="provincia" required></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="alta-bloque">
+        <h2><span class="num">04</span>Contacto</h2>
+        <p class="bloque-ayuda">Te enviaré la documentación a este correo. Si tu teléfono tiene WhatsApp, también podrás hablar con Sofía.</p>
+        <div class="form-grid">
+          <div class="form-field c6">
+            <label for="f-tel">Teléfono móvil <span class="req">*</span></label>
+            <input id="f-tel" name="telefono" required type="tel" maxlength="20" placeholder="600 000 000" autocomplete="tel">
+          </div>
+          <div class="form-field c3">
+            <label for="f-mail">Correo electrónico <span class="req">*</span></label>
+            <input id="f-mail" name="correo" required type="email" maxlength="100" autocomplete="email">
+          </div>
+          <div class="form-field c3">
+            <label for="f-mail2">Repite el correo <span class="req">*</span></label>
+            <input id="f-mail2" name="correo2" required type="email" maxlength="100" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <div class="alta-bloque">
+        <label class="form-consent">
+          <input type="checkbox" name="consentimiento" value="si" required>
+          <span>He leído y acepto la <a href="politica-de-privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Responsable del tratamiento: Dª María Montserrat Serrano Pardo. Finalidad: gestionar tu encargo y preparar la documentación de tu procedimiento.</span>
+        </label>
+        <!-- Trampa antispam: invisible para las personas -->
+        <div class="oculto-bot" aria-hidden="true">
+          <label>No rellenar <input name="web" tabindex="-1" autocomplete="off"></label>
+        </div>
+      </div>
+
+      <div class="alta-error" id="errorGeneral" role="alert" hidden></div>
+
+      <div class="alta-acciones">
+        <button type="button" class="btn-enlace" id="btnEjemplo" hidden>Rellenar con datos ficticios</button>
+        <button type="submit" class="btn-marca" id="btnEnviar">Enviar mis datos</button>
+      </div>
+    </form>
+
+    <div class="alta-resultado" id="resultado" hidden>
+      <h2>Datos recibidos</h2>
+      <p id="mensajeResultado"></p>
+      <div id="vistaPrevia" hidden>
+        <p><b>Así quedará el encabezado de la hoja de encargo:</b></p>
+        <div class="previa-hoja" id="previaHoja"></div>
+        <p style="margin-top:18px;"><b>Datos que se enviarían a Make:</b></p>
+        <pre class="previa-json" id="previaJson"></pre>
+      </div>
+      <button type="button" class="btn-enlace" id="btnOtra">Rellenar otro formulario</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Ir a la página principal">
+          <img src="images/logo.png" alt="Serrano Pardo Gestores" class="brand-logo brand-logo-footer">
+        </a>
+        <p>Abogacía y gestión administrativa en Madrid. Extranjería, nacionalidad, homologaciones, pensiones y gestión contable, laboral y fiscal de autónomos y pequeñas empresas.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/serranopardogestores" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="44" height="44" viewBox="0 0 44 44">
+              <defs>
+                <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FFDC80"/>
+                  <stop offset="25%" stop-color="#F77737"/>
+                  <stop offset="50%" stop-color="#E1306C"/>
+                  <stop offset="75%" stop-color="#C13584"/>
+                  <stop offset="100%" stop-color="#833AB4"/>
+                </linearGradient>
+              </defs>
+              <circle cx="22" cy="22" r="22" fill="url(#igGrad)"/>
+              <rect x="13" y="13" width="18" height="18" rx="5" stroke="#fff" stroke-width="1.6" fill="none"/>
+              <circle cx="22" cy="22" r="4.8" stroke="#fff" stroke-width="1.6" fill="none"/>
+              <circle cx="27.7" cy="16.3" r="1.2" fill="#fff"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/1M23t41CAd/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="44" height="44" viewBox="0 0 44 44">
+              <circle cx="22" cy="22" r="22" fill="#1877F2"/>
+              <path d="M25 15.5h2.4V11.6h-2.7c-3 0-5 1.9-5 5.1v2.7h-3.1v4.3h3.1V33h4.3v-9.3h3.2l.6-4.3h-3.8v-2.2c0-1 .3-1.7 2-1.7z" fill="#fff"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/34614737134" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="44" height="44" viewBox="0 0 44 44">
+              <circle cx="22" cy="22" r="22" fill="#25D366"/>
+              <path d="M28.9 26.4c-.5-.3-3-1.5-3.4-1.6-.5-.2-.8-.3-1.1.3-.3.5-1.3 1.6-1.6 2-.3.3-.6.4-1 .1-.5-.3-2-.7-3.8-2.3-1.4-1.3-2.3-2.8-2.6-3.3-.3-.5 0-.8.2-1 .2-.2.5-.6.7-.8.2-.3.3-.5.5-.8.2-.3.1-.6 0-.8-.1-.3-1.1-2.6-1.5-3.5-.4-.9-.8-.7-1.1-.7h-.9c-.3 0-.8.1-1.2.5-.4.5-1.6 1.6-1.6 3.8 0 2.2 1.6 4.4 1.9 4.7.2.3 3.2 5 7.9 7 1.1.5 2 .7 2.7 1 1.1.3 2.1.3 2.9.2.9-.1 3-1.2 3.4-2.4.4-1.2.4-2.2.3-2.4-.1-.2-.4-.3-.9-.6z" fill="#fff"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="tel:+34919959747">(+34) 91 995 97 47</a>
+        <a href="mailto:info@serranopardogestores.com">info@serranopardogestores.com</a>
+        <p>Calle Mayor 50, 3.º A<br>28921 Alcorcón (Madrid)<br>España</p>
+      </div>
+      <div class="footer-col">
+        <h4>Enlaces</h4>
+        <a href="servicios.html">Servicios</a>
+        <a href="sobre-mi.html">Sobre Mí</a>
+        <a href="index.html#proceso">Cómo trabajamos</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="index.html#opiniones">Opiniones</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="politica-de-privacidad.html">Política de privacidad</a>
+        <a href="politica-de-cookies.html">Política de cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Serrano Pardo Gestores. Todos los derechos reservados.</p>
+      <p>Diseño y automatización por Issyx Labs</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', ()=>{
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  },{threshold:0.12});
+  document.querySelectorAll('.sec-head, .service-card, .testi-card, .blog-card').forEach(el=>{
+    el.classList.add('reveal'); io.observe(el);
+  });
+</script>
+
+<script>
+  // ===== CONFIGURACIÓN DEL FORMULARIO DE ALTA =====
+  const CONFIG = {
+    // Pegar aquí la URL del webhook "SP – Alta cliente" de Make.
+    // Vacía = MODO DEMO: no se envía nada, solo se muestra la vista previa.
+    WEBHOOK_URL: 'https://hook.us2.make.com/i8c6baf18v8z2nbkxg6ff7xmam7aq4up',
+    VERSION_FORMULARIO: '0.2-web',
+    // true = muestra el aviso de versión de prueba y el botón de datos ficticios.
+    // Pasar a false solo cuando haya datos reales autorizados (contrato de encargo y Make en zona UE).
+    PRUEBA: true,
+    // DATOS DE PRUEBA: Montserrat enviará la lista real. El precio NO viaja desde aquí:
+    // Make lo busca en la pestaña "Procedimientos" de la hoja de altas.
+    PROCEDIMIENTOS: [
+      { codigo: 'PRUEBA_A', texto: 'procedimiento de prueba A' },
+      { codigo: 'PRUEBA_B', texto: 'procedimiento de prueba B' },
+      { codigo: 'PRUEBA_C', texto: 'procedimiento de prueba C' }
+    ],
+    // Montserrat indica al cliente qué modelo le corresponde. De momento solo existe uno.
+    MODELOS_MANDATO: [
+      { codigo: 'PROPIO', texto: 'En mi propio nombre', activo: true },
+      { codigo: 'MENOR', texto: 'En representación de un menor (próximamente)', activo: false },
+      { codigo: 'EMPRESA', texto: 'En representación de una empresa (próximamente)', activo: false }
+    ]
+  };
+</script>
+<script>
+(function () {
+  const form = document.getElementById('formAlta');
+  const modoDemo = !CONFIG.WEBHOOK_URL;
+  const PROVINCIAS = ['Madrid','A Coruña','Álava','Albacete','Alicante','Almería','Asturias','Ávila','Badajoz','Barcelona','Bizkaia','Burgos','Cáceres','Cádiz','Cantabria','Castellón','Ceuta','Ciudad Real','Córdoba','Cuenca','Gipuzkoa','Girona','Granada','Guadalajara','Huelva','Huesca','Illes Balears','Jaén','La Rioja','Las Palmas','León','Lleida','Lugo','Málaga','Melilla','Murcia','Navarra','Ourense','Palencia','Pontevedra','Salamanca','Santa Cruz de Tenerife','Segovia','Sevilla','Soria','Tarragona','Teruel','Toledo','Valencia','Valladolid','Zamora','Zaragoza'];
+
+  // --- Rellenar desplegables ---
+  const selProc = form.procedimiento_codigo;
+  selProc.innerHTML = '<option value="">Elige una opción</option>' +
+    CONFIG.PROCEDIMIENTOS.map(p => `<option value="${p.codigo}">${p.texto.charAt(0).toUpperCase() + p.texto.slice(1)}</option>`).join('');
+  form.modelo_mandato.innerHTML = CONFIG.MODELOS_MANDATO
+    .map(m => `<option value="${m.codigo}" ${m.activo ? '' : 'disabled'}>${m.texto}</option>`).join('');
+  form.provincia.innerHTML = PROVINCIAS.map(p => `<option>${p}</option>`).join('');
+
+  if (modoDemo || CONFIG.PRUEBA) {
+    document.getElementById('avisoDemo').hidden = false;
+    document.getElementById('btnEjemplo').hidden = false;
+  }
+
+  // --- Validación de documentos ---
+  const LETRAS = 'TRWAGMYFPDXBNJZSQVHLCKE';
+  function dniValido(v) {
+    const m = /^(\d{8})([A-Z])$/.exec(v); if (!m) return false;
+    return LETRAS[parseInt(m[1], 10) % 23] === m[2];
+  }
+  function nieValido(v) {
+    const m = /^([XYZ])(\d{7})([A-Z])$/.exec(v); if (!m) return false;
+    const n = { X: '0', Y: '1', Z: '2' }[m[1]] + m[2];
+    return LETRAS[parseInt(n, 10) % 23] === m[3];
+  }
+  function cifValido(v) {
+    const m = /^([ABCDEFGHJNPQRSUVW])(\d{7})([0-9A-J])$/.exec(v); if (!m) return false;
+    const d = m[2]; let suma = 0;
+    for (let i = 0; i < 7; i++) {
+      let x = parseInt(d[i], 10);
+      if (i % 2 === 0) { x *= 2; x = Math.floor(x / 10) + (x % 10); }
+      suma += x;
+    }
+    const c = (10 - (suma % 10)) % 10;
+    return m[3] === String(c) || m[3] === 'JABCDEFGHI'[c];
+  }
+  function documentoValido(tipo, v) {
+    if (tipo === 'DNI') return dniValido(v);
+    if (tipo === 'NIE') return nieValido(v);
+    if (tipo === 'CIF') return cifValido(v);
+    if (tipo === 'Pasaporte') return /^[A-Z0-9]{5,20}$/.test(v);
+    return false;
+  }
+  const ayudas = { DNI: '8 números y letra. Ej.: 12345678Z', NIE: 'Letra, 7 números y letra. Ej.: X1234567L', Pasaporte: 'Letras y números, sin espacios', CIF: 'Letra, 7 números y dígito o letra de control' };
+  form.tipo_documento.addEventListener('change', () => {
+    document.getElementById('ayudaDoc').textContent = ayudas[form.tipo_documento.value] || '';
+  });
+
+  const limpiar = s => (s || '').toString().replace(/\s+/g, ' ').trim();
+
+  function datos() {
+    const f = Object.fromEntries(new FormData(form).entries());
+    Object.keys(f).forEach(k => f[k] = limpiar(f[k]));
+    f.numero_documento = f.numero_documento.toUpperCase().replace(/[\s.-]/g, '');
+    f.correo = f.correo.toLowerCase(); f.correo2 = (f.correo2 || '').toLowerCase();
+    return f;
+  }
+
+  function componerDireccion(f) {
+    // Ej.: "Calle Mayor, 12, 3º B, 28921 Alcorcón (Madrid)"
+    let d = `${f.tipo_via} ${f.via}, ${f.numero}`;
+    if (f.piso_puerta) d += `, ${f.piso_puerta}`;
+    d += `, ${f.codigo_postal} ${f.municipio}`;
+    if (f.provincia && f.provincia.toLowerCase() !== f.municipio.toLowerCase()) d += ` (${f.provincia})`;
+    return d;
+  }
+
+  function validar(f) {
+    const errores = [];
+    form.querySelectorAll('.invalido').forEach(el => el.classList.remove('invalido'));
+    const marcar = (n, msg) => { const el = form.elements[n]; if (el) el.classList.add('invalido'); errores.push(msg); };
+    ['procedimiento_codigo','modelo_mandato','tratamiento','nombre','primer_apellido','nacionalidad','tipo_documento','numero_documento','via','numero','codigo_postal','municipio','provincia','telefono','correo','correo2']
+      .forEach(n => { if (!f[n]) marcar(n, 'Faltan campos obligatorios.'); });
+    if (f.numero_documento && f.tipo_documento && !documentoValido(f.tipo_documento, f.numero_documento)) marcar('numero_documento', `El número de ${f.tipo_documento} no es válido.`);
+    if (f.codigo_postal && !/^(0[1-9]|[1-4]\d|5[0-2])\d{3}$/.test(f.codigo_postal)) marcar('codigo_postal', 'El código postal no es válido.');
+    if (f.telefono && !/^\+?[\d\s]{9,16}$/.test(f.telefono)) marcar('telefono', 'El teléfono no es válido.');
+    if (f.correo && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.correo)) marcar('correo', 'El correo electrónico no es válido.');
+    if (f.correo && f.correo2 && f.correo !== f.correo2) marcar('correo2', 'Los dos correos no coinciden.');
+    if (f.consentimiento !== 'si') errores.push('Debes aceptar la política de privacidad.');
+    return [...new Set(errores)];
+  }
+
+  function referencia() {
+    const d = new Date();
+    const fecha = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+    const azar = Array.from(crypto.getRandomValues(new Uint8Array(3))).map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+    return `SP-${fecha}-${azar}`;
+  }
+
+  function construirPayload(f) {
+    const proc = CONFIG.PROCEDIMIENTOS.find(p => p.codigo === f.procedimiento_codigo);
+    return {
+      referencia: referencia(),
+      enviado_en: new Date().toISOString(),
+      version_formulario: CONFIG.VERSION_FORMULARIO,
+      procedimiento_codigo: f.procedimiento_codigo,
+      procedimiento_texto: proc ? proc.texto : '',
+      modelo_mandato: f.modelo_mandato,
+      tratamiento: f.tratamiento,
+      nombre: f.nombre,
+      primer_apellido: f.primer_apellido,
+      segundo_apellido: f.segundo_apellido || '',
+      nacionalidad: f.nacionalidad,
+      tipo_documento: f.tipo_documento,
+      numero_documento: f.numero_documento,
+      tipo_via: f.tipo_via,
+      via: f.via,
+      numero: f.numero,
+      piso_puerta: f.piso_puerta || '',
+      codigo_postal: f.codigo_postal,
+      municipio: f.municipio,
+      provincia: f.provincia,
+      direccion_completa: componerDireccion(f),
+      telefono: f.telefono,
+      correo: f.correo,
+      consentimiento: 'si',
+      ...(f.web ? { web: f.web } : {}) // trampa anti-bots: solo viaja si un bot la rellena; Make descarta el envío
+    };
+  }
+
+  function previaHoja(p) {
+    const ap = [p.primer_apellido, p.segundo_apellido].filter(Boolean).join(' ');
+    return `De una parte, <strong>${esc(p.tratamiento)} ${esc(p.nombre)} ${esc(ap)}</strong>, mayor de edad, nacional de ${esc(p.nacionalidad)}, con ${esc(p.tipo_documento)} ${esc(p.numero_documento)}, con domicilio a estos efectos en ${esc(p.direccion_completa)}, número de teléfono ${esc(p.telefono)}, y correo electrónico ${esc(p.correo)}. En lo sucesivo El Cliente.`;
+  }
+  function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+  function mostrarError(msgs) {
+    const el = document.getElementById('errorGeneral');
+    el.innerHTML = msgs.map(esc).join('<br>');
+    el.hidden = !msgs.length;
+    if (msgs.length) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const f = datos();
+    const errores = validar(f);
+    if (errores.length) return mostrarError(errores);
+    mostrarError([]);
+    const payload = construirPayload(f);
+    const btn = document.getElementById('btnEnviar');
+    btn.disabled = true; btn.textContent = 'Enviando…';
+
+    try {
+      if (!modoDemo) {
+        // application/x-www-form-urlencoded = petición "simple": evita el preflight CORS y Make la interpreta sin configurar nada.
+        const r = await fetch(CONFIG.WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(payload).toString()
+        });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+      }
+      form.hidden = true;
+      const res = document.getElementById('resultado');
+      res.hidden = false;
+      document.getElementById('mensajeResultado').textContent = modoDemo
+        ? `Modo demostración: no se ha enviado nada. Referencia de prueba: ${payload.referencia}.`
+        : `Gracias, ${payload.nombre}. He recibido tus datos con la referencia ${payload.referencia}. Te enviaré la documentación por correo electrónico para que la revises y la firmes.`;
+      if (modoDemo) {
+        document.getElementById('vistaPrevia').hidden = false;
+        document.getElementById('previaHoja').innerHTML = previaHoja(payload);
+        document.getElementById('previaJson').textContent = JSON.stringify(payload, null, 2);
+      }
+      res.scrollIntoView({ block: 'start' });
+    } catch (err) {
+      mostrarError(['No se han podido enviar tus datos. Inténtalo de nuevo en unos minutos o escríbeme a info@serranopardogestores.com.']);
+    } finally {
+      btn.disabled = false; btn.textContent = 'Enviar mis datos';
+    }
+  });
+
+  document.getElementById('btnOtra').addEventListener('click', () => {
+    form.reset(); form.hidden = false;
+    document.getElementById('resultado').hidden = true;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Datos claramente ficticios para la demo (DNI de ejemplo con letra válida).
+  document.getElementById('btnEjemplo').addEventListener('click', () => {
+    const ej = { procedimiento_codigo: 'PRUEBA_A', modelo_mandato: 'PROPIO', tratamiento: 'Dª', nombre: 'Prueba', primer_apellido: 'Ficticia', segundo_apellido: 'Demo',
+      nacionalidad: 'Colombia', tipo_documento: 'NIE', numero_documento: 'X1234567L', tipo_via: 'Calle', via: 'de Ejemplo', numero: '1', piso_puerta: '1º A',
+      codigo_postal: '28921', municipio: 'Alcorcón', provincia: 'Madrid', telefono: '600000000', correo: 'prueba@example.com', correo2: 'prueba@example.com' };
+    Object.entries(ej).forEach(([k, v]) => { if (form.elements[k]) form.elements[k].value = v; });
+    form.consentimiento.checked = true;
+    form.tipo_documento.dispatchEvent(new Event('change'));
+  });
+})();
+</script>
+
+</body>
+</html>
