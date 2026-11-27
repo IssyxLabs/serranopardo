@@ -1,0 +1,44 @@
+# Publica la web en serranopardogestores.com (CloudMax / Plesk) cada vez que hay
+# cambios en main. GitHub Pages (serranopardo.issyxlabs.com) se sigue publicando como hasta ahora.
+#
+# Necesita 3 secretos en GitHub (Settings → Secrets and variables → Actions):
+#   PLESK_FTP_SERVER    servidor FTP de Plesk (p. ej. el que indica Plesk en "Acceso FTP")
+#   PLESK_FTP_USERNAME  usuario FTP (mejor uno dedicado, solo con acceso a httpdocs)
+#   PLESK_FTP_PASSWORD  contraseña de ese usuario
+#
+# Solo sube y actualiza archivos del repositorio. No borra nada que no haya subido
+# esta Action (por ejemplo, la carpeta de respaldo de WordPress queda intacta).
+
+name: Publicar en serranopardogestores.com
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-plesk
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4.2.2
+
+      - name: Subir por FTPS a httpdocs
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.PLESK_FTP_SERVER }}
+          username: ${{ secrets.PLESK_FTP_USERNAME }}
+          password: ${{ secrets.PLESK_FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ${{ vars.PLESK_SERVER_DIR || './httpdocs/' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            CNAME
+            README.md
